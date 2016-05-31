@@ -22,11 +22,6 @@ print.fields <- function(x, y){
 
 
 
-
-
-
-
-
 #create.doc("index2", makefile=F)
 render("index2/index2.Rmd")
 rmarkdown::html_document(toc=TRUE, toc_depth = 2, template = "plantilla/ficha.html")

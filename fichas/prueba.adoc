@@ -1,0 +1,7 @@
+= Ficha de prueba
+
+Esta es una ficha de prueba
+
+== Indicios ambientales
+
+Aquí van los indicios ambientales.
