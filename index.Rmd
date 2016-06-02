@@ -1,9 +1,15 @@
 ---
 title: Fichas de gastos presuntamente ilegítimos
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    includes:
+      before_body: doc_prefix_index.html
 ---
 
 
 - [M-30](M-30.html)
 
-- [Probando](Probando.html)
+- [Caja Mágica](Caja-Mágica.html)
 
