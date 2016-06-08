@@ -17,7 +17,7 @@ Usera
 
 
 ## Importe
-NA
+290000000
 
 
 ## Indicios políticos
@@ -66,5 +66,9 @@ Contrato con la empresa constructora
 Contrato de mantenimiento
 Índice uso por los vecinos del distrito 
 Contrato de concesión a empresa Momo Sport Club
+
+
+## Correo
+auditausera@gmail.com
 
 

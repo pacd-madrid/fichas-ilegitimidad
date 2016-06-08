@@ -5,6 +5,9 @@ url.data <- "https://docs.google.com/spreadsheets/d/1zda2z0b09o-XUY-RdOWpcKgg-tb
 library(RCurl)
 library(rmarkdown)
 library(yaml)
+# Librería para la realización de mapas con google maps.
+library(ggmap)
+library(plotGoogleMaps)
 
 # Carga de los datos
 data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
@@ -75,3 +78,22 @@ output:
 render.all.records(data)
 
 render_site()
+
+qmap("Madrid", zoom=12)
+qmap("40.368941, -3.684453", zoom = 16, maptype = 'hybrid')
+data(meuse)
+meuse
+coordinates(meuse)<-~x+y 
+proj4string(meuse) <- CRS('+init=epsg:28992')
+m<-plotGoogleMaps(data)
+
+lon=40.368941
+lat=-3.684453
+data=data.frame(lat,lon)
+coordinates(data)<-~lat+lon
+proj4string(data) <- CRS('+init=epsg:3857')
+m<-plotGoogleMaps(data)
+
+pts66 = SpatialPoints(cbind(data$lon,data$lat), CRS("+init=epsg:4202"))
+pts66
+pts84 = spTransform(pts66, CRS("+init=epsg:3033"))
