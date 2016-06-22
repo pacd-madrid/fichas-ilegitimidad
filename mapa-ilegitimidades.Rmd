@@ -1,0 +1,20 @@
+---
+title: "Mapa de indicios de ilegitimidad"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mapa
+
+```{r, echo=FALSE}
+require(leaflet)
+m <- leaflet() %>%
+  setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
+  addTiles() %>%
+  addMarkers(lng=-3.70453, lat=40.41358, popup="Madrid")
+m 
+```
+

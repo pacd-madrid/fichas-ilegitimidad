@@ -17,23 +17,28 @@ Usera
 
 
 ## Importe
-290000000
+290.000.000 €
 
 
 ## Indicios políticos
-NA
+
 
 
 ## Indicios económicos
-El gasto ha tenido un sobrecoste superior al 20% de lo presupuestado., El Ayuntamiento tuvo que endeudarse para financiar el gasto.
+- El gasto ha tenido un sobrecoste superior al 20% de lo presupuestado.
+- El Ayuntamiento tuvo que endeudarse para financiar el gasto.
 
 
 ## Indicios de falta de transparencia y corrupción
-La población no fue informada suficientemente del gasto., La información relativa la gasto no es fácilmente accesible al público., Existen vínculos entre el equipo de gobierno que aprobó el gasto y la empresa o empresas adjudicatarias.
+- La población no fue informada suficientemente del gasto.
+- La información relativa la gasto no es fácilmente accesible al público.
+- Existen vínculos entre el equipo de gobierno que aprobó el gasto y la empresa o empresas adjudicatarias.
 
 
 ## Indicios sociales
-El gasto compromete la satisfación de algún derecho básico para alguna parte de la población., El gasto sólo beneficia a una minoría privilegiada de la población., En el barrio o distrito había otras necesidades prioritarias que podrían haberse financiado con el dinero que supuso el gasto.
+- El gasto compromete la satisfación de algún derecho básico para alguna parte de la población.
+- El gasto sólo beneficia a una minoría privilegiada de la población.
+- En el barrio o distrito había otras necesidades prioritarias que podrían haberse financiado con el dinero que supuso el gasto.
 
 
 ## Indicios ambientales
@@ -41,7 +46,7 @@ El gasto compromete la satisfación de algún derecho básico para alguna parte 
 
 
 ## Indicios de género
-No hubo evaluación de impacto de género antes de ejecutar el gasto.
+- No hubo evaluación de impacto de género antes de ejecutar el gasto.
 
 
 ## Indicios laborales
@@ -66,9 +71,5 @@ Contrato con la empresa constructora
 Contrato de mantenimiento
 Índice uso por los vecinos del distrito 
 Contrato de concesión a empresa Momo Sport Club
-
-
-## Correo
-auditausera@gmail.com
 
 

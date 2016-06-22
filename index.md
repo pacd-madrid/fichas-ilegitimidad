@@ -1,0 +1,29 @@
+---
+title: Fichas de gastos presuntamente ilegítimos
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    includes:
+      before_body: doc_prefix_index.html
+---
+
+
+- [M-30](M-30.html)
+
+- [Caja Mágica](Caja-Mágica.html)
+
+- [Puente Monumental Perrault](Puente-Monumental-Perrault.html)
+
+
+
+## Mapa de gastos presuntamente ilegítimos
+
+
+```
+## Error: <text>:5:1: inesperado SPECIAL
+## 4:   addTiles()
+## 5: %>%
+##    ^
+```
+

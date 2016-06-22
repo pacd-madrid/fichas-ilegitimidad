@@ -6,14 +6,22 @@ library(RCurl)
 library(rmarkdown)
 library(yaml)
 # Librería para la realización de mapas con google maps.
-library(ggmap)
-library(plotGoogleMaps)
+#library(plotGoogleMaps)
 
 # Carga de los datos
 data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
 headers <- gsub(".", " ", names(data), fixed=T)
+
+# Sustitución de comas por cambio de línea en campos de indicios
+for (i in 7:13){
+  data[,i] <- trimws(gsub(",", "\n-", data[,i]), "l")
+  data[i] <- sapply(data[i], function(x) ifelse(is.na(x) | x=="", "", paste("-",x)))
+}
+# Añadir € al campo de Importe
+data[,6] <- paste(format(data[,6], big.mark="."), "€")
+
 # Número de columnas a procesar (las dos últimas no se procesan al tener datos confidenciales)
-n <- ncol(data)-2
+n <- ncol(data)-3
 
 #' Title
 #' Función que crea una cadena en formato Rmardown con el contenido de una sección de la ficha.
@@ -58,6 +66,7 @@ render.record <- function(x, y){
 #'
 #' @examples
 render.all.records <- function(data){
+  require(knitr)
   # Generar el índice
   file.create("index.Rmd")
   yamlheader <- "---
@@ -71,6 +80,20 @@ output:
 ---\n\n"
   write(yamlheader, file="index.Rmd", append=T)
   write(unlist(lapply(data[,2], function(x) paste("- [", x, "](", gsub(" ", "-", x), ".html)\n", sep=""))), file="index.Rmd", append=T)
+  write("\n\n## Mapa de gastos presuntamente ilegítimos", file="index.Rmd", append=T)
+  write("\n```{r, echo=FALSE}
+require(leaflet)
+m <- leaflet() %>%
+  setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
+  addTiles()", file="index.Rmd", append=T)
+  # Función que imprime un marcador para cada ilegitimidad
+  coord <- function (x){
+    co <- unlist(strsplit(x, ","))
+    return (paste("lng=", co[2], ", lat=", co[1], sep=""))
+  }
+  write(unlist(lapply(data[,ncol(data)], function(x) paste("  addMarkers(", coord(x), ", popup=\"", x, "\")", sep=""))), file="index.Rmd", append=T)
+  write("m\n```\n", file="index.Rmd", append=T)
+  knit("index.Rmd")
   # Generar las fichas
   lapply(1:nrow(data), function(i) render.record(headers, data[i,]))
 }
@@ -79,21 +102,8 @@ render.all.records(data)
 
 render_site()
 
-qmap("Madrid", zoom=12)
-qmap("40.368941, -3.684453", zoom = 16, maptype = 'hybrid')
-data(meuse)
-meuse
-coordinates(meuse)<-~x+y 
-proj4string(meuse) <- CRS('+init=epsg:28992')
-m<-plotGoogleMaps(data)
+# Mapa de ilegitimidades
+library(leaflet)
 
-lon=40.368941
-lat=-3.684453
-data=data.frame(lat,lon)
-coordinates(data)<-~lat+lon
-proj4string(data) <- CRS('+init=epsg:3857')
-m<-plotGoogleMaps(data)
 
-pts66 = SpatialPoints(cbind(data$lon,data$lat), CRS("+init=epsg:4202"))
-pts66
-pts84 = spTransform(pts66, CRS("+init=epsg:3033"))
+

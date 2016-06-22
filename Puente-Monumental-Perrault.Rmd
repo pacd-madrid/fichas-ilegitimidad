@@ -17,23 +17,26 @@ Arganzuela
 
 
 ## Importe
-13600000
+ 13.600.000 €
 
 
 ## Indicios políticos
-NA
+
 
 
 ## Indicios económicos
-El gasto ha tenido un sobrecoste superior al 20% de lo presupuestado., El Ayuntamiento tuvo que endeudarse para financiar el gasto.
+- El gasto ha tenido un sobrecoste superior al 20% de lo presupuestado.
+- El Ayuntamiento tuvo que endeudarse para financiar el gasto.
 
 
 ## Indicios de falta de transparencia y corrupción
-La población no fue informada suficientemente del gasto., La información relativa la gasto no es fácilmente accesible al público.
+- La población no fue informada suficientemente del gasto.
+- La información relativa la gasto no es fácilmente accesible al público.
 
 
 ## Indicios sociales
-El gasto compromete la satisfación de algún derecho básico para alguna parte de la población., En el barrio o distrito había otras necesidades prioritarias que podrían haberse financiado con el dinero que supuso el gasto.
+- El gasto compromete la satisfación de algún derecho básico para alguna parte de la población.
+- En el barrio o distrito había otras necesidades prioritarias que podrían haberse financiado con el dinero que supuso el gasto.
 
 
 ## Indicios ambientales
@@ -58,9 +61,5 @@ Foto del cartel anunciador de la inversión y los medios de comunicación que re
 
 ## Aspectos a investigar
 Porque se realizó esta inversión en la construcción de este puente que no resulta esencial, cuando además era ya patente la gran deuda del Ayuntamiento de Madrid generada por obras de soterramiento de la M-30 y Madrid Río contribuyendo al despilfarro en obras de carácter suntuoso y la desviación que generó respecto de su presupuesto de inversión.
-
-
-## Correo
-antardufe@gmail.com
 
 

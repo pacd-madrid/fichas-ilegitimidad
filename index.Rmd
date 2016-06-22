@@ -15,3 +15,18 @@ output:
 
 - [Puente Monumental Perrault](Puente-Monumental-Perrault.html)
 
+
+
+## Mapa de gastos presuntamente ilegítimos
+
+```{r, echo=FALSE}
+require(leaflet)
+m <- leaflet() %>%
+  setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
+  addTiles() %>%
+  addMarkers(lng= -3.719815, lat=40.400207, popup="M-30") %>%
+  addMarkers(lng= -3.684453, lat=40.368941, popup="Caja Mágica") %>%
+  addMarkers(lng= -3.711719, lat=40.398063, popup="Pasarela Perault")
+m
+```
+
