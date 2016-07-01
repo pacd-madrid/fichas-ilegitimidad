@@ -15,15 +15,18 @@ output:
 
 - [Puente Monumental Perrault](Puente-Monumental-Perrault.html)
 
+- [Operación Mahou-Calderón](Operación-Mahou-Calderón.html)
+
+- [Mercado de Frutas y Verduras de Legazpi](Mercado-de-Frutas-y-Verduras-de-Legazpi.html)
+
+- [Oficina de Atención al Contribuyente](Oficina-de-Atención-al-Contribuyente.html)
+
 
 
 ## Mapa de gastos presuntamente ilegítimos
 
 
 ```
-## Error: <text>:5:1: inesperado SPECIAL
-## 4:   addTiles()
-## 5: %>%
-##    ^
+## Error in find_phantom(): PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 ```
 

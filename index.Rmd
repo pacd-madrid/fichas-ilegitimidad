@@ -15,6 +15,12 @@ output:
 
 - [Puente Monumental Perrault](Puente-Monumental-Perrault.html)
 
+- [Operación Mahou-Calderón](Operación-Mahou-Calderón.html)
+
+- [Mercado de Frutas y Verduras de Legazpi](Mercado-de-Frutas-y-Verduras-de-Legazpi.html)
+
+- [Oficina de Atención al Contribuyente](Oficina-de-Atención-al-Contribuyente.html)
+
 
 
 ## Mapa de gastos presuntamente ilegítimos
@@ -24,9 +30,12 @@ require(leaflet)
 m <- leaflet() %>%
   setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
   addTiles() %>%
-  addMarkers(lng= -3.719815, lat=40.400207, popup="M-30") %>%
-  addMarkers(lng= -3.684453, lat=40.368941, popup="Caja Mágica") %>%
-  addMarkers(lng= -3.711719, lat=40.398063, popup="Pasarela Perault")
+  addMarkers(lng= -3.719815, lat=40.400207, popup="M-30")  %>%
+  addMarkers(lng= -3.684453, lat=40.368941, popup="Caja Mágica")  %>%
+  addMarkers(lng= -3.711719, lat=40.398063, popup="Puente Monumental Perrault")  %>%
+  addMarkers(lng=-3.7130504, lat=40.4023818, popup="Operación Mahou Calderón")  %>%
+  addMarkers(lng=-3.6984063, lat=40.3915487, popup="Mercado de Frutas y Verduras de Legazpi")  %>%
+  addMarkers(lng=-3.6928518, lat=40.3909201, popup="Oficina de Atención al Contribuyente")
 m
 ```
 

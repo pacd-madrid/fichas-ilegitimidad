@@ -5,8 +5,11 @@ url.data <- "https://docs.google.com/spreadsheets/d/1zda2z0b09o-XUY-RdOWpcKgg-tb
 library(RCurl)
 library(rmarkdown)
 library(yaml)
+
 # Librería para la realización de mapas con google maps.
 #library(plotGoogleMaps)
+
+options(scipen=999)
 
 # Carga de los datos
 data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
@@ -81,7 +84,7 @@ output:
   write(yamlheader, file="index.Rmd", append=T)
   write(unlist(lapply(data[,2], function(x) paste("- [", x, "](", gsub(" ", "-", x), ".html)\n", sep=""))), file="index.Rmd", append=T)
   write("\n\n## Mapa de gastos presuntamente ilegítimos", file="index.Rmd", append=T)
-  write("\n```{r, echo=FALSE}
+  cat("\n```{r, echo=FALSE}
 require(leaflet)
 m <- leaflet() %>%
   setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
@@ -91,8 +94,8 @@ m <- leaflet() %>%
     co <- unlist(strsplit(x, ","))
     return (paste("lng=", co[2], ", lat=", co[1], sep=""))
   }
-  write(unlist(lapply(data[,ncol(data)], function(x) paste("  addMarkers(", coord(x), ", popup=\"", x, "\")", sep=""))), file="index.Rmd", append=T)
-  write("m\n```\n", file="index.Rmd", append=T)
+  cat(unlist(lapply(data[,ncol(data)], function(x) paste(" %>%\n  addMarkers(", coord(x), ", popup=\"", x, "\")", sep=""))), file="index.Rmd", append=T)
+  write("\nm\n```\n", file="index.Rmd", append=T)
   knit("index.Rmd")
   # Generar las fichas
   lapply(1:nrow(data), function(i) render.record(headers, data[i,]))
@@ -103,7 +106,6 @@ render.all.records(data)
 render_site()
 
 # Mapa de ilegitimidades
-library(leaflet)
 
 
 
