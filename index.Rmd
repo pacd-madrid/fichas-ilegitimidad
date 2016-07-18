@@ -8,34 +8,65 @@ output:
       before_body: doc_prefix_index.html
 ---
 
+```{r, echo=FALSE, , cache=FALSE, message=FALSE, warning=FALSE}
+# URL de la hoja de cálculo con los datos
+library(knitr)
 
-- [M-30](M-30.html)
-
-- [Caja Mágica](Caja-Mágica.html)
-
-- [Puente Monumental Perrault](Puente-Monumental-Perrault.html)
-
-- [Operación Mahou-Calderón](Operación-Mahou-Calderón.html)
-
-- [Mercado de Frutas y Verduras de Legazpi](Mercado-de-Frutas-y-Verduras-de-Legazpi.html)
-
-- [Oficina de Atención al Contribuyente](Oficina-de-Atención-al-Contribuyente.html)
+## Global options
+options(digits = 4, scipen=10)
+opts_chunk$set(echo=FALSE, cache=TRUE, prompt=FALSE, tidy=TRUE, comment=NA, message=FALSE, warning=FALSE)
+```
 
 
+```{r}
+# Librerías requeridas
+library(RCurl)
+library(rmarkdown)
+library(yaml)
+
+# URL de la hoja de cálculo con los datos
+url.data <- "https://docs.google.com/spreadsheets/d/1zda2z0b09o-XUY-RdOWpcKgg-tbgn3d3syDijnKtX4s/pub?gid=176454935&single=true&output=csv"
+# Carga de los datos
+data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
+# Añadir € al campo de Importe
+data[,6] <- paste(format(data[,6], big.mark="."), "€")
+# Función que obiene el nombre normalizado para una ficha. 
+getName <- function (x) {
+  name <- gsub(" ", "-", tolower(iconv(x, to='ASCII//TRANSLIT')))
+  name <- gsub("/", "-", name)
+  return(name)
+}
+```
+
+```{r, results="asis"}
+# Escribir la lista de ilegitimidades
+cat(unlist(lapply(data[,2], function(x) paste("- [", x, "](", getName(x), ".html)\n", sep=""))))
+
+```
 
 ## Mapa de gastos presuntamente ilegítimos
 
-```{r, echo=FALSE}
+```{r}
+baseurl <- "http://pacd-madrid.github.io/fichas-ilegitimidad/"
+# Transformación de las url de las fotos para tomarlas del catálogo en github
+getUrlPhoto <- function (x) {
+  name <- ""
+  if (x[20]!="") {
+    name <- paste(baseurl, "img/", getName(x[2]), "-small-1.jpg", sep="")
+  }
+  return(name)
+}
+data[["Fotos"]] <- apply(data, 1, getUrlPhoto)
+data[["Popup"]] <- paste("<h3><a href=\"", baseurl, getName(data[["Título"]]), ".html\">", data[["Título"]], "</a></h3>\n\n<img src=\"", data[["Fotos"]], "\">\n\n<p>", data[["Importe"]], "</p>", sep="")
+# Separar las coordenadas en longitud y latitud
+require(tidyr)
+data <- separate(data = data, col = Ubicación, into = c("lat", "lng"), sep = "\\,")
+
 require(leaflet)
-m <- leaflet() %>%
+m <- leaflet(data = data) %>%
   setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
   addTiles() %>%
-  addMarkers(lng= -3.719815, lat=40.400207, popup="M-30")  %>%
-  addMarkers(lng= -3.684453, lat=40.368941, popup="Caja Mágica")  %>%
-  addMarkers(lng= -3.711719, lat=40.398063, popup="Puente Monumental Perrault")  %>%
-  addMarkers(lng=-3.7130504, lat=40.4023818, popup="Operación Mahou Calderón")  %>%
-  addMarkers(lng=-3.6984063, lat=40.3915487, popup="Mercado de Frutas y Verduras de Legazpi")  %>%
-  addMarkers(lng=-3.6928518, lat=40.3909201, popup="Oficina de Atención al Contribuyente")
+  addMarkers(popup=~Popup)
 m
 ```
 

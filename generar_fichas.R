@@ -26,6 +26,13 @@ data[,6] <- paste(format(data[,6], big.mark="."), "€")
 # Número de columnas a procesar (las dos últimas no se procesan al tener datos confidenciales)
 n <- ncol(data)-3
 
+# Función que obiene el nombre normalizado para una ficha. 
+getName <- function (x) {
+  name <- gsub(" ", "-", tolower(iconv(x, to='ASCII//TRANSLIT')))
+  name <- gsub("/", "-", name)
+  return(name)
+}
+
 #' Title
 #' Función que crea una cadena en formato Rmardown con el contenido de una sección de la ficha.
 #'
@@ -51,61 +58,29 @@ render.field <- function(name, field){
 #'
 #' @examples
 render.record <- function(x, y){
-  file.name <- paste(gsub(" ", "-", y[2]), ".Rmd", sep="")
+  require(imager)
+  file.name <- paste(getName(y[2]), ".Rmd", sep="")
   file.create(file.name)
   yamlheader <- as.yaml(list(title=as.character(y[2]), date=substr(y[1],1,10)))
   write(paste("---\n", yamlheader,"---\n\n", sep=""), file=file.name, append=T)
   write(unlist(Map(render.field, x[3:n], y[3:n])), file=file.name, append=T)
+  # Descargar fotos
+  url.photos <- trimws(unlist(strsplit(gsub("open\\?", "uc?export=download&", y[20]), ",")))
+  photos <- NULL
+  if (length(url.photos)>0) {
+    for (i in 1:length(url.photos)) {
+      photos[i] <- paste("img/", getName(y[2]), "-", i, ".jpg", sep="")
+      download.file(url.photos[i], photos[i], method="wget", mode="w")
+      photo <- load.image(photos[i])
+      photo <- resize(photo, size_x = -300/width(photo)*100, size_y = -300/width(photo)*100)
+      save.image(photo, paste("img/", getName(y[2]), "-small-", i, ".jpg", sep=""))
+      write(paste('<img src="', photos[i], '"> <br/>', sep=""), file = file.name, append = T)
+    }
+  } 
   render_site(file.name)
 }
 
-
-#' Función que genera todas las fichas en formato Rmarkdown.
-#'
-#' @param data Data frame con los registros de las fichas.
-#'
-#' @return None
-#' @export
-#'
-#' @examples
-render.all.records <- function(data){
-  require(knitr)
-  # Generar el índice
-  file.create("index.Rmd")
-  yamlheader <- "---
-title: Fichas de gastos presuntamente ilegítimos
-output:
-  html_document:
-    toc: false
-    toc_float: false
-    includes:
-      before_body: doc_prefix_index.html
----\n\n"
-  write(yamlheader, file="index.Rmd", append=T)
-  write(unlist(lapply(data[,2], function(x) paste("- [", x, "](", gsub(" ", "-", x), ".html)\n", sep=""))), file="index.Rmd", append=T)
-  write("\n\n## Mapa de gastos presuntamente ilegítimos", file="index.Rmd", append=T)
-  cat("\n```{r, echo=FALSE}
-require(leaflet)
-m <- leaflet() %>%
-  setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
-  addTiles()", file="index.Rmd", append=T)
-  # Función que imprime un marcador para cada ilegitimidad
-  coord <- function (x){
-    co <- unlist(strsplit(x, ","))
-    return (paste("lng=", co[2], ", lat=", co[1], sep=""))
-  }
-  cat(unlist(lapply(data[,ncol(data)], function(x) paste(" %>%\n  addMarkers(", coord(x), ", popup=\"", x, "\")", sep=""))), file="index.Rmd", append=T)
-  write("\nm\n```\n", file="index.Rmd", append=T)
-  knit("index.Rmd")
-  # Generar las fichas
-  lapply(1:nrow(data), function(i) render.record(headers, data[i,]))
-}
-
-render.all.records(data)
+lapply(1:nrow(data), function(i) render.record(headers, data[i,]))
 
 render_site()
-
-# Mapa de ilegitimidades
-
-
 
