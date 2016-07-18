@@ -61,8 +61,4 @@ Supuesto valor del alquiler por encima de los precios de mercado
 Contrato de alquiler suscrito, verificando precio y tiempo 
 
 
-## Correo
-marthink24@gmail.com
-
-
 <img src="img/oficina-de-atencion-al-contribuyente-1.jpg"> <br/>

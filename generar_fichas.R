@@ -24,7 +24,7 @@ for (i in 7:13){
 data[,6] <- paste(format(data[,6], big.mark="."), "€")
 
 # Número de columnas a procesar (las dos últimas no se procesan al tener datos confidenciales)
-n <- ncol(data)-3
+n <- ncol(data)-4
 
 # Función que obiene el nombre normalizado para una ficha. 
 getName <- function (x) {
