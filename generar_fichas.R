@@ -84,3 +84,19 @@ lapply(1:nrow(data), function(i) render.record(headers, data[i,]))
 
 render_site()
 
+# Envío de correos al Ayuntamiento
+library(mailR)
+fichas-
+sender <- "asalber@gmail.com"
+recipients <- c("asalber@gmail.com")
+baseurl <- "http://pacd-madrid.github.io/fichas-ilegitimidad/"
+for (x in data[2,])
+send.mail(from = sender,
+          to = recipients,
+          subject=paste("Ficha de presunta ilegitimidad:", x),
+          body = paste("Les remitimos una nueva ficha de presunta ilegitimidad de la Auditoría Ciudadana del Ayuntamiento de Madrid. 
+          Pueden acceder a la ficha por medio del siguiente enlace:\n", getName(x)),
+          smtp = list(host.name = "smtp.gmail.com", port = 465, 
+                      user.name="asalber@gmail.com", passwd="pzdhzsducwjelxyi", ssl=TRUE),
+          authenticate = TRUE,
+          send = TRUE)

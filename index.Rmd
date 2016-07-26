@@ -41,7 +41,6 @@ getName <- function (x) {
 ```{r, results="asis"}
 # Escribir la lista de ilegitimidades
 cat(unlist(lapply(data[,2], function(x) paste("- [", x, "](", getName(x), ".html)\n", sep=""))))
-
 ```
 
 ## Mapa de gastos presuntamente ilegítimos
