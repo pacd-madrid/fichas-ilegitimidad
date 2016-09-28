@@ -59,6 +59,7 @@ render.field <- function(name, field){
 #' @examples
 render.record <- function(x, y){
   require(imager)
+  require(yaml)
   file.name <- paste(getName(y[2]), ".Rmd", sep="")
   file.create(file.name)
   yamlheader <- as.yaml(list(title=as.character(y[2]), date=substr(y[1],1,10)))

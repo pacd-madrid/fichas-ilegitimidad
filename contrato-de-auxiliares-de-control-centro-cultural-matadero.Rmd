@@ -1,19 +1,19 @@
 ---
-title: M-30
-date: 26/05/2016
+title: Contrato de Auxiliares de control Centro Cultural Matadero
+date: 10/08/2016
 ---
 
 
 ## Descripción
-Soterramiento de la M-30 y mantenimiento de la infraestructura. 
+Externalización de servicio público
 
 
 ## Ejercicios
-2004, 2005, 2006, 2007
+2011, 2012, 2013, 2014, 2015, 2016
 
 
 ## Distrito
-Todo Madrid
+Arganzuela
 
 
 ## Importe
@@ -21,13 +21,11 @@ Todo Madrid
 
 
 ## Indicios políticos
-
+- El gasto no estaba contemplado en el programa electoral.
 
 
 ## Indicios económicos
-- El gasto ha tenido un sobrecoste superior al 20% de lo presupuestado.
-- El Ayuntamiento tuvo que endeudarse para financiar el gasto.
-- Las condiciones del crédito para financiar el gasto fueron abusivas.
+- Se contrató a una empresa privada para ejecutar el gasto cuando podría haberlo hecho el Ayuntamiento.
 
 
 ## Indicios de falta de transparencia y corrupción
@@ -39,35 +37,32 @@ Todo Madrid
 
 ## Indicios sociales
 - El gasto compromete la satisfación de algún derecho básico para alguna parte de la población.
+- El gasto sólo beneficia a una minoría privilegiada de la población.
 - En el barrio o distrito había otras necesidades prioritarias que podrían haberse financiado con el dinero que supuso el gasto.
 
 
 ## Indicios ambientales
-- No hubo evaluación de impacto ambiental antes de ejecutar el gasto.
-- El gasto ha perjudicado la salud de una parte de la población.
-- El gasto ha provocado una agresión a la biodiversidad (especies animales y vegetales).
+
 
 
 ## Indicios de género
 - No hubo evaluación de impacto de género antes de ejecutar el gasto.
-- En la ejecución del gasto han participado significativamente más hombres que mujeres.
-- Existe discriminación de género en la empresa que ejecutó el gasto.
 
 
 ## Indicios laborales
+- Las condiciones laborales de la empresa que ejecutó el gasto empeoraron tras la adjudicación del contrato del gasto.
 - Las condiciones laborales de los trabajadores de la empresa que ejecutó el gasto son sensiblemente peores que la de los trabajadores públicos de la misma categoría.
 
 
 ## Otros indicios
-El proyecto fue declarado nulo por el tribunal superior de justicia europeo por no realizar declaración de impacto ambiental. 
+No se cumplen los acuerdos mínimos comprometidos por el Grupo Integra con las trabajadoras, no se cubren las bajas.
 
 
 ## Pruebas
-Sentencia de nulidad del proyecto por el tribunal superior de justicia europeo.
+
 
 
 ## Aspectos a investigar
-Contratos adjudicados.
-Coste de mantenimiento de la Calle 30.
+Número de personas trabajando, número de horas trabajadas, falta de personal de sustitución y cuando se cubren las bajas se hace por personal en prácticas que no cobran.
 
 
