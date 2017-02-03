@@ -16,7 +16,6 @@ getName <- function (x) {
 
 load("fichas.enviadas.Rda")
 
-
 enviar.ficha <- function (ficha){
   require(mailR)
   sender <- "madridauditamadrid@gmail.com"
@@ -40,17 +39,4 @@ for (ficha in data[["Título"]]) {
 }
 
 save(fichas.enviadas, file="fichas.enviadas.Rda")
-
-
-# URL de la hoja de cálculo con los datos de las peticiones de información
-url.data <- "https://docs.google.com/spreadsheets/d/1L_kLylhVReaL7GiL1Q0PJjx_b6yWOf2EPuk4bxiOIEU/pub?gid=1250269168&single=true&output=csv"
-# Carga de los datos
-require(RCurl)
-data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
-
-peticiones.enviadas = data.frame(peticion=character())
-load("fichas.enviadas.Rda")
-
-
-save(peticiones.enviadas, file="fichas.enviadas.Rda")
 

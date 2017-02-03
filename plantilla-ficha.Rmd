@@ -1,0 +1,79 @@
+---
+title: 
+#output:
+#  rmdformats::material:
+#    highlight: kate
+---
+
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=F, cache=T, prompt=F, tidy=T, comment=NA, message=F, warning=F)
+opts_knit$set(width=75)
+
+# FUNCIONES
+# Convertir un vector en una lista no ordenada de markdown
+listamd <- function(x) {
+  if (is.null(x)) return("No se conocen.")
+  return(paste0('\n', paste(paste0('- ', x), collapse = '\n'), '\n\n'))
+}
+
+# Convertir lista de urls en imágenes de markdown
+imagen <- function(x) {
+  if (is.null(x)) return()
+  output <- "\n\n***\n\n"
+  for (image in x) 
+    output <- paste0(output, "![](", image$url, ")\n")
+  return(output)
+}
+```
+
+# `r ficha$Título`
+
+## Descripción
+`r ficha$Descripción`
+
+## Años
+`r sapply(ficha$Ejercicios, paste, collapse=", ")`
+
+## Distrito
+`r sapply(ficha$Distrito, paste, collapse=", ")`
+
+## Importe
+`r if (is.na(ficha$Importe)) "Desconocido" else paste(format(ficha$Importe, big.mark="."), "€")`
+
+## Indicios políticos
+`r listamd(unlist(ficha[["Indicios políticos"]]))`
+
+## Indicios económicos
+`r listamd(unlist(ficha[["Indicios económicos"]]))`
+
+## Indicios de falta de transparencia y corrupción
+`r listamd(unlist(ficha[["Indicios de falta de transparencia y corrupción"]]))`
+
+## Indicios sociales
+`r listamd(unlist(ficha[["Indicios sociales"]]))`
+
+## Indicios ambientales
+`r listamd(unlist(ficha[["Indicios ambientales"]]))`
+
+## Indicios de género
+`r listamd(unlist(ficha[["Indicios de género"]]))`
+
+## Indicios laborales
+`r listamd(unlist(ficha[["Indicios laborales"]]))`
+
+## Otros indicios
+`r if (is.na(ficha[["Otros indicios"]])) "No se conocen." else ficha[["Otros indicios"]]`
+
+## Pruebas
+`r if (is.na(ficha$Pruebas)) "No se dispone." else ficha$Pruebas`
+
+## Aspectos a investigar
+`r if (is.na(ficha[["Aspectos a investigar"]])) "No se especifican." else ficha[["Aspectos a investigar"]]`
+
+`r imagen(ficha$Foto)`

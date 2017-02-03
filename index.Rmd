@@ -8,61 +8,78 @@ output:
       before_body: doc_prefix_index.html
 ---
 
-```{r, echo=FALSE, , cache=FALSE, message=FALSE, warning=FALSE}
-# URL de la hoja de cálculo con los datos
-library(knitr)
-
+```{r setup, include=F}
 ## Global options
 options(digits = 4, scipen=10)
-opts_chunk$set(echo=FALSE, cache=TRUE, prompt=FALSE, tidy=TRUE, comment=NA, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo=F, cache=F, prompt=F, tidy=T, comment=NA, message=F, warning=F)
 ```
 
 
 ```{r}
 # Librerías requeridas
-library(RCurl)
-library(rmarkdown)
-library(yaml)
+library(airtabler)
+library(dplyr)
 
-# URL de la hoja de cálculo con los datos
-url.data <- "https://docs.google.com/spreadsheets/d/1zda2z0b09o-XUY-RdOWpcKgg-tbgn3d3syDijnKtX4s/pub?gid=176454935&single=true&output=csv"
-# Carga de los datos
-data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
-# Añadir € al campo de Importe
-data[,6] <- paste(format(data[,6], big.mark="."), "€")
-# Función que obiene el nombre normalizado para una ficha. 
-getName <- function (x) {
-  name <- gsub(" ", "-", tolower(iconv(x, to='ASCII//TRANSLIT')))
-  name <- gsub("/", "-", name)
-  return(name)
+# CARGA DE DATOS
+# Carga de datos desde Google Drive
+# url.data <- "https://docs.google.com/spreadsheets/d/1zda2z0b09o-XUY-RdOWpcKgg-tbgn3d3syDijnKtX4s/pub?gid=176454935&single=true&output=csv"
+# data <- read.csv(text = getURL(url.data, .encoding = "UTF-8"), encoding = "UTF-8", header = T, stringsAsFactors = F)
+# Carga de datos desde AIRTABLE
+Sys.setenv(AIRTABLE_API_KEY="keyZOgDPeLEn3Me8q")
+datos <- airtable(base = "appe7uLXI2oMZ033Y", tables = c("Distritos", "Fichas ilegitimidad"))
+datos.distritos <- datos$Distritos$select()
+datos.fichas <- datos$`Fichas ilegitimidad`$select()
+# PREPOCESAMIENTO DE DATOS
+datos.distritos$createdTime <- NULL
+datos.fichas$createdTime <- NULL
+# Añadir los distritos a las fichas desde la tabla de distritos
+for (i in 1:nrow(datos.fichas)) {
+  distritos <- ""
+  for (j in unlist(datos.fichas[i,"Distrito"])) {
+    distritos <- paste(distritos, datos.distritos[datos.distritos$id==j,]$Nombre, sep=", ")
+  }
+  datos.fichas[[i,"Distrito"]] <- substring(distritos, 2)
 }
+datos.fichas$Distrito <- as.character(datos.fichas$Distrito)
 ```
 
-```{r, results="asis"}
-# Escribir la lista de ilegitimidades
-cat(unlist(lapply(data[,2], function(x) paste("- [", x, "](", getName(x), ".html)\n", sep=""))))
+
+```{r}
+library(DT)
+crear.url <- function(enlace, texto) {
+  return(paste0('<a href="', gsub(" ","-", enlace), '.html">', texto, '</a>'))
+}
+
+fichas <- rename(datos.fichas, temp=Título) %>% 
+  mutate(Título=crear.url(temp, temp)) %>%
+  select(Distrito, Título) %>%
+  arrange(`Título`) 
+
+datatable(fichas, rownames = F, escape=F, filter = 'bottom', options = list(pageLength = 5, dom="ltip", language = list(url = 'http://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')))
 ```
 
 ## Mapa de gastos presuntamente ilegítimos
 
 ```{r}
-baseurl <- "http://pacd-madrid.github.io/fichas-ilegitimidad/"
-# Transformación de las url de las fotos para tomarlas del catálogo en github
-getUrlPhoto <- function (x) {
-  name <- ""
-  if (x[20]!="") {
-    name <- paste(baseurl, "img/", getName(x[2]), "-small-1.jpg", sep="")
-  }
-  return(name)
+library(DT)
+crear.popup <- function(enlace, texto, imageurl="") {
+  return(paste0('<h3><a href="', gsub(" ","-", enlace), '.html">', texto, '</a></h3>\n\n<img width="300" src="', imageurl, '">\n\n'))
 }
-data[["Fotos"]] <- apply(data, 1, getUrlPhoto)
-data[["Popup"]] <- paste("<h3><a href=\"", baseurl, getName(data[["Título"]]), ".html\">", data[["Título"]], "</a></h3>\n\n<img src=\"", data[["Fotos"]], "\">\n\n<p>", data[["Importe"]], "</p>", sep="")
+
+datos.fichas$Thumbnail <- ""
+for (i in 1:nrow(datos.fichas)){
+  if (!is.null(datos.fichas[i,"Foto"][[1]])) 
+    datos.fichas[i,"Thumbnail"] <-  datos.fichas[i,"Foto"][[1]]$thumbnails$large$url
+}
+
+datos.fichas <- mutate(datos.fichas, Popup=crear.popup(Título, Título, Thumbnail))
+
 # Separar las coordenadas en longitud y latitud
 require(tidyr)
-data <- separate(data = data, col = Ubicación, into = c("lat", "lng"), sep = "\\,")
+datos.fichas <- separate(data = datos.fichas, col = Ubicación, into = c("lat", "lng"), sep = "\\,")
 
 require(leaflet)
-m <- leaflet(data = data) %>%
+m <- leaflet(data = datos.fichas) %>%
   setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
   addTiles() %>%
   addMarkers(popup=~Popup)
