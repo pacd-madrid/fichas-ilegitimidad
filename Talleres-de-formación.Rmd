@@ -1,31 +1,32 @@
-Oficina de Atención al Contribuyente
-====================================
+Talleres de formación
+=====================
 
 ------------------------------------------------------------------------
 
-![](https://dl.airtable.com/0pHfL6WrSMCYCV0q6bAv_oficina-atencion-contribuyente-legazpi.jpg)
+![]()
 
 <br/>
 
 Descripción
 -----------
 
-Pago de alquiler de local en c/ del Hierro, 27
+Ineficaz gestión de los talleres de formación en los centros culturales
+municipales
 
 Años
 ----
 
-2010, 2011
+2016
 
 Distrito
 --------
 
-Arganzuela
+Usera
 
 Importe
 -------
 
-Desconocido
+171.7 €
 
 Indicios políticos
 ------------------
@@ -40,9 +41,7 @@ No se conocen.
 Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
--   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible
-    al público.
+No se conocen.
 
 Indicios sociales
 -----------------
@@ -67,22 +66,18 @@ No se conocen.
 Otros indicios
 --------------
 
-Supuesto valor del alquiler por encima de los precios de mercado
+No se conocen.
 
 Aspectos a investigar
 ---------------------
 
-Contrato de alquiler suscrito, verificando precio y tiempo
+No se especifican.
 
 Pruebas
 -------
 
 Peticiones de información
 -------------------------
-
--   [Contrato de alquiler de local Oficina de Atencion al Contribuyente
-    c/ Hierro,
-    27](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0728302.html)
 
 Documentación
 -------------

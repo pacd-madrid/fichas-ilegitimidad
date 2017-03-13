@@ -1,0 +1,9 @@
+base
+rmarkdown
+airtabler
+dplyr
+knitr
+rmdformats
+DT
+tidyr
+leaflet

@@ -34,6 +34,10 @@ imagen <- function(x) {
 
 # `r ficha$Título`
 
+`r imagen(ficha$Foto)`
+
+<br/>
+
 ## Descripción
 `r ficha$Descripción`
 
@@ -70,10 +74,34 @@ imagen <- function(x) {
 ## Otros indicios
 `r if (is.na(ficha[["Otros indicios"]])) "No se conocen." else ficha[["Otros indicios"]]`
 
-## Pruebas
-`r if (is.na(ficha$Pruebas)) "No se dispone." else ficha$Pruebas`
-
 ## Aspectos a investigar
 `r if (is.na(ficha[["Aspectos a investigar"]])) "No se especifican." else ficha[["Aspectos a investigar"]]`
 
-`r imagen(ficha$Foto)`
+## Pruebas
+`r if (is.na(ficha$Pruebas)) "" else ficha$Pruebas`
+
+## Peticiones de información
+
+```{r, results="asis"}
+peticiones <- subset(datos.peticiones, Caso==ficha$id)
+if (nrow(peticiones)>0){
+  for (i in 1:nrow(peticiones)) {
+    cat("- [", peticiones[i,"Título"], "](https://pacd-madrid.github.io/peticiones-informacion/peticion-", gsub("/","-",peticiones[i,"Registro"]), ".html)\n", sep="")
+  }
+}
+```
+
+## Documentación
+
+```{r, results="asis"}
+filtraciones <- subset(datos.filtraciones, Caso==ficha$id)
+if (nrow(filtraciones)>0){
+  for (i in 1:nrow(filtraciones)) {
+    cat("- ",  filtraciones[i,"Título"], "  \n", filtraciones[i,"Descripción"], "\n")
+    docs <- filtraciones[i,"Documentos"][[1]]
+    for (i in 1:nrow(docs)){
+      cat("    - [", docs[i,"filename"], "](", docs[i,"url"], ")\n")
+    }
+  }
+}
+```

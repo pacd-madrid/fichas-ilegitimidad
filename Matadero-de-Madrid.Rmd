@@ -1,6 +1,12 @@
 Matadero de Madrid
 ==================
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/jHdKRoPrSuPQo3qZUtBf_matadero_madrid.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -40,8 +46,8 @@ Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 
 Indicios sociales
 -----------------
@@ -77,17 +83,19 @@ destinado al encuentro y la cultura. Alquiler de los espacios con fines
 comerciales. Modelo de gestión pública y privada entre cuyos fines está
 la viabilidad económica del proyecto.
 
-Pruebas
--------
-
-Memoria de actividades.
-
 Aspectos a investigar
 ---------------------
 
 Modelo de gestión. Contratos. Coste de mantenimiento. Acuerdos con
 empresas privadas.
 
-------------------------------------------------------------------------
+Pruebas
+-------
 
-![](https://dl.airtable.com/jHdKRoPrSuPQo3qZUtBf_matadero_madrid.jpg)
+Memoria de actividades.
+
+Peticiones de información
+-------------------------
+
+Documentación
+-------------

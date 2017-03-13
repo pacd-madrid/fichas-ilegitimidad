@@ -1,6 +1,12 @@
 Soterramiento de la M-30
 ========================
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/3xDxIyCQKq7IUHrxcn4n_soterramiento-m-30.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -29,8 +35,8 @@ No se conocen.
 Indicios económicos
 -------------------
 
--   El gasto ha tenido un sobrecoste superior al 20% de lo
-    presupuestado.
+-   El gasto ha tenido un sobrecoste superior al 20% de
+    lo presupuestado.
 -   El Ayuntamiento tuvo que endeudarse para financiar el gasto.
 -   Las condiciones del crédito para financiar el gasto fueron abusivas.
 
@@ -38,8 +44,8 @@ Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 -   Hubo irregularidades en el proceso de contratación.
 -   Existen vínculos entre el equipo de gobierno que aprobó el gasto y
     la empresa o empresas adjudicatarias.
@@ -81,17 +87,23 @@ Otros indicios
 El proyecto fue declarado nulo por el tribunal superior de justicia
 europeo por no realizar declaración de impacto ambiental.
 
+Aspectos a investigar
+---------------------
+
+Contratos adjudicados. Coste de mantenimiento de la Calle 30.
+
 Pruebas
 -------
 
 Sentencia de nulidad del proyecto por el tribunal superior de justicia
 europeo.
 
-Aspectos a investigar
----------------------
+Peticiones de información
+-------------------------
 
-Contratos adjudicados. Coste de mantenimiento de la Calle 30.
+Documentación
+-------------
 
-------------------------------------------------------------------------
-
-![](https://dl.airtable.com/3xDxIyCQKq7IUHrxcn4n_soterramiento-m-30.jpg)
+-   El trato con ACS y Ferrovial se lleva 500 millones  
+    <http://www.elconfidencial.com/espana/madrid/2015-11-16/carmena-levanta-las-alfombras-de-la-m-30-el-trato-con-acs-y-ferrovial-cuesta-500-millones_1096663/>
+    -   [partidas\_abonadas\_ayuntamiento\_calle30.csv](https://dl.airtable.com/Oe4ndThxQ2eo3TvzL1Qz_partidas_abonadas_ayuntamiento_calle30.csv)

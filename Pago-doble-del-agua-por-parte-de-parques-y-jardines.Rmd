@@ -1,6 +1,12 @@
 Pago doble del agua por parte de parques y jardines
 ===================================================
 
+------------------------------------------------------------------------
+
+![]()
+
+<br/>
+
 Descripción
 -----------
 
@@ -37,8 +43,8 @@ Indicios económicos
 Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 
 Indicios sociales
 -----------------
@@ -65,6 +71,12 @@ Otros indicios
 
 No se conocen.
 
+Aspectos a investigar
+---------------------
+
+Coste en presupuesto anual en aguas no potables. Hay que revisar a todas
+las empresas contratadas para ese servicio
+
 Pruebas
 -------
 
@@ -72,12 +84,8 @@ Tengo una respuesta a una reclamación donde se me indica que el agua de
 riego no es potable, además de fotos de los camiones usando el agua de
 las bocas de riego
 
-Aspectos a investigar
----------------------
+Peticiones de información
+-------------------------
 
-Coste en presupuesto anual en aguas no potables. Hay que revisar a todas
-las empresas contratadas para ese servicio
-
-------------------------------------------------------------------------
-
-![]()
+Documentación
+-------------

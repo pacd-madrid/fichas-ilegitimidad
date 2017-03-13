@@ -1,6 +1,12 @@
 Talleres de formación de los centros culturales de Usera
 ========================================================
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/hkjf8NpRQOy8ijsDsnjQ_centro%20cultural%20meseta%20orcasitas.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -74,21 +80,54 @@ Otros indicios
 
 No se conocen.
 
-Pruebas
--------
-
-No se dispone.
-
 Aspectos a investigar
 ---------------------
 
--   Contratos de adjudicación de los talleres de formación en el periodo
-    2010-2016.
+-   Contratos de adjudicación de los talleres de formación en el
+    periodo 2010-2016.
 -   Empresas adjudicatarias.
 -   Cursos impartidos en el periodo 2010-2016.
 -   Análisis de género de los cursos.
 -   Condiciones laborales de los empleados.
 
-------------------------------------------------------------------------
+Pruebas
+-------
 
-![](https://dl.airtable.com/hkjf8NpRQOy8ijsDsnjQ_centro%20cultural%20meseta%20orcasitas.jpg)
+Peticiones de información
+-------------------------
+
+-   [Facturación total de la empresa Aula Intercultural SL en el curso
+    2015-2016](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1148844.html)
+-   [Memoria de ejecución del contrato de la empresa Aula Intercultural
+    SL en el curso
+    2015-2016](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1155108.html)
+-   [Número de personas asistentes a los talleres de formación de los
+    centro culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1149024.html)
+-   [Número de alumnos y cursos impartidos los talleres de formación de
+    los centros culturales de Usera en
+    2010-2016](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1165113.html)
+-   [Contratos de las empresas Virensis SA y Aulaintercultural SL para
+    los talleres de formación de los centros culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1148632.html)
+-   [Certificado obligaciones tributarias de la empresa Aula
+    Intercultural
+    SL](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0625131.html)
+-   [Verificaciones realizadas por el Coordinador de los talleres de
+    formación de los centros culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1226291.html)
+-   [Monitores y asistencia de los cursos de los centros culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0278783.html)
+-   [Importe del coste/hora facturado por las empresas Virensis SA y
+    Aula Intercultural SL en los tallers de formación de los centros
+    culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1226198.html)
+-   [Presupuesto inicial y liquidado de los talleres de formación de los
+    centros culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1155112.html)
+-   [Ofertas presentadas al concurso de licitación de los talleres de
+    formación de los centros culturales de
+    Usera](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-1148770.html)
+
+Documentación
+-------------

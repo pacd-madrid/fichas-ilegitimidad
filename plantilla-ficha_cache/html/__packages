@@ -4,8 +4,6 @@ airtabler
 dplyr
 knitr
 rmdformats
-bitops
-RCurl
-yaml
+DT
 tidyr
 leaflet

@@ -1,6 +1,12 @@
 Contrato de Auxiliares de control Centro Cultural Matadero
 ==========================================================
 
+------------------------------------------------------------------------
+
+![]()
+
+<br/>
+
 Descripción
 -----------
 
@@ -36,8 +42,8 @@ Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 -   Hubo irregularidades en el proceso de contratación.
 -   Existen vínculos entre el equipo de gobierno que aprobó el gasto y
     la empresa o empresas adjudicatarias.
@@ -76,11 +82,6 @@ Otros indicios
 No se cumplen los acuerdos mínimos comprometidos por el Grupo Integra
 con las trabajadoras, no se cubren las bajas.
 
-Pruebas
--------
-
-No se dispone.
-
 Aspectos a investigar
 ---------------------
 
@@ -88,6 +89,11 @@ Número de personas trabajando, número de horas trabajadas, falta de
 personal de sustitución y cuando se cubren las bajas se hace por
 personal en prácticas que no cobran.
 
-------------------------------------------------------------------------
+Pruebas
+-------
 
-![]()
+Peticiones de información
+-------------------------
+
+Documentación
+-------------

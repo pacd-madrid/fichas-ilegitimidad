@@ -1,6 +1,12 @@
 Caja Mágica
 ===========
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/8wlPhQb5TiCfOVboDjx7_caja-magica.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -32,16 +38,16 @@ No se conocen.
 Indicios económicos
 -------------------
 
--   El gasto ha tenido un sobrecoste superior al 20% de lo
-    presupuestado.
+-   El gasto ha tenido un sobrecoste superior al 20% de
+    lo presupuestado.
 -   El Ayuntamiento tuvo que endeudarse para financiar el gasto.
 
 Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 -   Existen vínculos entre el equipo de gobierno que aprobó el gasto y
     la empresa o empresas adjudicatarias.
 
@@ -83,11 +89,6 @@ mayores y un parque de 30 Ha.
 
 -   <http://ccaa.elpais.com/ccaa/2015/01/20/madrid/1421790603_306893.html>
 
-Pruebas
--------
-
-No se dispone.
-
 Aspectos a investigar
 ---------------------
 
@@ -95,6 +96,11 @@ Contrato con la empresa constructora Contrato de mantenimiento Índice
 uso por los vecinos del distrito Contrato de concesión a empresa Momo
 Sport Club
 
-------------------------------------------------------------------------
+Pruebas
+-------
 
-![](https://dl.airtable.com/8wlPhQb5TiCfOVboDjx7_caja-magica.jpg)
+Peticiones de información
+-------------------------
+
+Documentación
+-------------

@@ -15,12 +15,15 @@ options(scipen=999)
 
 # Carga de datos desde AIRTABLE
 Sys.setenv(AIRTABLE_API_KEY="keyZOgDPeLEn3Me8q")
-datos <- airtable(base = "appe7uLXI2oMZ033Y", tables = c("Distritos", "Fichas ilegitimidad"))
+datos <- airtable(base = "appe7uLXI2oMZ033Y", tables = c("Distritos", "Fichas ilegitimidad", "Peticiones", "Filtraciones"))
 datos.distritos <- datos$Distritos$select()
 datos.fichas <- datos$`Fichas ilegitimidad`$select()
+datos.peticiones <- datos$Peticiones$select()
+datos.filtraciones <- datos$Filtraciones$select()
 # PREPOCESAMIENTO DE DATOS
 datos.distritos$createdTime <- NULL
 datos.fichas$createdTime <- NULL
+datos.filtraciones$createdTime <- NULL
 # Añadir los distritos a las fichas desde la tabla de distritos
 for (i in 1:nrow(datos.fichas)) {
   distritos <- c()
@@ -42,3 +45,4 @@ for (i in 1:nrow(datos.fichas)){
 
 render_site()
 #clean_site()
+

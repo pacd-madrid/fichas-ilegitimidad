@@ -1,6 +1,12 @@
 Mercado de Frutas y Verduras de Legazpi
 =======================================
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/215L9KURWEiBTzJsHNAl_mercado-frutas-verduras-legazpi.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -38,8 +44,8 @@ Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 
 Indicios sociales
 -----------------
@@ -66,17 +72,23 @@ Otros indicios
 
 No se conocen.
 
+Aspectos a investigar
+---------------------
+
+Contrato de seguridad privada.
+
 Pruebas
 -------
 
 El mantenimiento cerrado de la edificación supuso un gasto en seguridad
 durante una decena de años cerrado.
 
-Aspectos a investigar
----------------------
+Peticiones de información
+-------------------------
 
-Contrato de seguridad privada.
+-   [Contratos de seguridad, obras y gasto de energía para el Mercado de
+    Frutas y Verduras de
+    Legazpi](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0728037.html)
 
-------------------------------------------------------------------------
-
-![](https://dl.airtable.com/215L9KURWEiBTzJsHNAl_mercado-frutas-verduras-legazpi.jpg)
+Documentación
+-------------

@@ -1,6 +1,12 @@
 Puente Monumental Perrault
 ==========================
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/kjEoviLZRM2XI9wVrwxR_pasarela-perrault.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -34,16 +40,16 @@ No se conocen.
 Indicios económicos
 -------------------
 
--   El gasto ha tenido un sobrecoste superior al 20% de lo
-    presupuestado.
+-   El gasto ha tenido un sobrecoste superior al 20% de
+    lo presupuestado.
 -   El Ayuntamiento tuvo que endeudarse para financiar el gasto.
 
 Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 
 Indicios sociales
 -----------------
@@ -73,12 +79,6 @@ Otros indicios
 
 No se conocen.
 
-Pruebas
--------
-
-Foto del cartel anunciador de la inversión y los medios de comunicación
-que recogieron el acto y de inaguración y su coste
-
 Aspectos a investigar
 ---------------------
 
@@ -88,6 +88,14 @@ Ayuntamiento de Madrid generada por obras de soterramiento de la M-30 y
 Madrid Río contribuyendo al despilfarro en obras de carácter suntuoso y
 la desviación que generó respecto de su presupuesto de inversión.
 
-------------------------------------------------------------------------
+Pruebas
+-------
 
-![](https://dl.airtable.com/kjEoviLZRM2XI9wVrwxR_pasarela-perrault.jpg)
+Foto del cartel anunciador de la inversión y los medios de comunicación
+que recogieron el acto y de inaguración y su coste
+
+Peticiones de información
+-------------------------
+
+Documentación
+-------------

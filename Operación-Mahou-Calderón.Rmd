@@ -1,6 +1,12 @@
 Operación Mahou-Calderón
 ========================
 
+------------------------------------------------------------------------
+
+![](https://dl.airtable.com/ZwGaOUGKRe2OEUTtN8YS_operacion-mahou-calderon.jpg)
+
+<br/>
+
 Descripción
 -----------
 
@@ -35,8 +41,8 @@ No se conocen.
 Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 -   Hubo irregularidades en el proceso de contratación.
 
 Indicios sociales
@@ -68,6 +74,12 @@ Otros indicios
 
 No se conocen.
 
+Aspectos a investigar
+---------------------
+
+Aplicación de convenio entre las partes y acuedo sobre el Plan Especial
+de Desarrollo Urbano del Proyecto
+
 Pruebas
 -------
 
@@ -76,12 +88,8 @@ parte del Atlético de Madrid y acuerdo perjudicial para el Consistorio
 que debería abonar 40% de la operación para infraestructura y
 urbanización con dinero público.
 
-Aspectos a investigar
----------------------
+Peticiones de información
+-------------------------
 
-Aplicación de convenio entre las partes y acuedo sobre el Plan Especial
-de Desarrollo Urbano del Proyecto
-
-------------------------------------------------------------------------
-
-![](https://dl.airtable.com/ZwGaOUGKRe2OEUTtN8YS_operacion-mahou-calderon.jpg)
+Documentación
+-------------

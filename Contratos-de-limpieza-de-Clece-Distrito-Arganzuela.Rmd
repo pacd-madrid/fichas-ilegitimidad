@@ -1,6 +1,12 @@
 Contratos de limpieza de Clece Distrito Arganzuela
 ==================================================
 
+------------------------------------------------------------------------
+
+![]()
+
+<br/>
+
 Descripción
 -----------
 
@@ -36,8 +42,8 @@ Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible al
-    público.
+-   La información relativa la gasto no es fácilmente accesible
+    al público.
 -   Existen vínculos entre el equipo de gobierno que aprobó el gasto y
     la empresa o empresas adjudicatarias.
 
@@ -76,17 +82,23 @@ atienden las sustituciones y cuando se hace se envía a gente en
 prácticas que no cobra, no se cumplen los criterios mínimos de seguridad
 e higiene en el trabajo.
 
-Pruebas
--------
-
-No se dispone.
-
 Aspectos a investigar
 ---------------------
 
 Incumplimiento de contrato con el personal contratado, plazas a cubrir y
 normativa de seguridad e higiene en el trabajo
 
-------------------------------------------------------------------------
+Pruebas
+-------
 
-![]()
+Peticiones de información
+-------------------------
+
+-   [Contratos de mantenimiento integral y limpieza LOTE2 en
+    Arganzuela](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-10-18.html)
+-   [Contrato de la empresa adjucataria de la limpieza de edificios
+    públicos
+    en Arganzuela.](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0982784.html)
+
+Documentación
+-------------
