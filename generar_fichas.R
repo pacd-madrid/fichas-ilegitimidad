@@ -38,7 +38,7 @@ for (i in 1:nrow(datos.fichas)){
   ficha = datos.fichas[i,]
   render('plantilla-ficha.Rmd',
          output_format = "md_document", 
-         output_file =  paste0(gsub(" ","-",ficha$Título), ".Rmd"),
+         output_file =  paste0(gsub(" ", "-", ficha$Título), ".Rmd"),
          output_dir = '.',
          quiet = TRUE)
 }
