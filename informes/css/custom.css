@@ -1,0 +1,32 @@
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 22px;
+    margin-bottom: 15px;
+}
+
+h1.title {
+    margin-bottom: 25px;
+}
+
+h4.date {
+    margin-bottom: 40px;
+}
+
+.plotly {
+    display: block;
+    margin: auto;
+}
+
+.leaflet-container {
+    display: block;
+    margin: auto;
+}
+
+.img-center {
+    display: block;
+    margin: auto;
+}
+
+.figure {
+    display: block;
+    margin: auto;
+}

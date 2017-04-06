@@ -3,4 +3,6 @@ knitr
 rmdformats
 ggplot2
 plotly
+webshot
 leaflet
+htmlwidgets

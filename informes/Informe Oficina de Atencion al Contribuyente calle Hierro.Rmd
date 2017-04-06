@@ -1,29 +1,28 @@
 ---
 title: "Arrendamiento del local de la Oficina de Atención al Contribuyente de la calle Hierro"
+author: "Auditoría Ciudadana del Ayuntamiento de Madrid (http://madridauditamadrid.org)<br/>Grupo Auditor de Arganzuela (auditarganzuela@gmail.com)"
 date: "5 de abril de 2017"
 output:
-  rmdformats::html_clean:
-    highlight: kate
+  html_document:
+    standalone: true
+    theme: flatly
+    css: css/custom.css
+    toc: true
+    toc_float: true
+    fig_width: 7
+    fig_caption: false
+    includes:
+      after_body: include/footer.html
 ---
 
 
-```{r knitr_init, echo=FALSE, cache=FALSE}
-library(knitr)
-library(rmdformats)
-
-## Global options
-#options(max.print="75")
-opts_chunk$set(echo=F, cache=T, prompt=F, tidy=T, comment=NA, message=F, warning=F)
-#opts_knit$set(width=75)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=F, cache=T, prompt=F, tidy=T, comment=NA, message=F, warning=F)
 ```
 
 ```{r}
 library(plotly)
 ```
-
-***Auditoría Ciudadana del Ayuntamiento de Madrid***    
-**Distrito: Arganzuela**  
-**Grupo Auditor Arganzuela (auditarganzuela@gmail.com)**  
 
 # Introducción
 
@@ -33,16 +32,13 @@ El Ayuntamiento de Madrid no es una excepción, más bien al contrario, ya que e
 
 [^nota1]: http://www.bde.es/webbde/es/estadis/infoest/a1408.pdf
 
-**Evolución de la Deuda del Ayuntamiento de Madrid**
-```{r deuda_madrid, fig.width=8, fig.align='center'}
+```{r deuda-madrid, fig.width=8, fig.align="center", fig.cap="Fuente: Elaboración propia a partir de los datos del Banco de España."}
 require(plotly)
 data = read.table("datos/deuda_ayuntamiento_madrid.csv", header = TRUE, sep=",")
-p <- plot_ly(data, x=~Año, y=~Deuda, type='bar', color=~Alcalde, name = 'Evolución Deuda Ayuntamiento madrid') %>%
-  layout(yaxis = list(title="Deuda (en millones de €)"))
+p <- plot_ly(data, x=~Año, y=~Deuda, type='bar', color=~Alcalde) %>%
+  layout(yaxis = list(title="Deuda (en millones de €)"), legend = list(y=100, orientation = 'h'))
 p
 ```
-
-_Fuente: Elaboración propia a partir de los datos del Banco de España._
 
 Este período se caracterizó por un despilfarro sin precedentes en la capital madrileña, en la que se construyeron multitud de infraestructuras, como el soterramiento de la M-30 (que se estima supuso más de 4.000 millones de euros), la compra y remodelación del Palacio de Cibeles (que supuso más de 500 millones de euros), las inversiones para las olimpiadas, y otros gastos de dudoso beneficio para la población madrileña.
 
@@ -76,9 +72,9 @@ A efectos de este informe entendemos por **Deuda Ilegítima** aquella contraída
 
 El presente informe presenta los resultados de la auditoría del arrendamiento de un local para uso como Oficina de Atención al Contribuyente situado en la calle Hierro, 27 Esq. calle Antracita, 3 (Barrio de Legazpi) en el Distrito de Arganzuela.
 
-<img src="img/oac-calle-hierro.jpg" alt="Oficina de Atención al Contribuyente de la calle Hierro" style="display:block; margin:auto; width:80%;"/>
+![Oficina de Atención al Contribuyente de la calle Hierro](img/oac-calle-hierro.jpg){.img-center}
 
-```{r map, fig.height=4, fig.align='center'}
+```{r map, fig.height=4}
 require(leaflet)
 m <- leaflet() %>%
   setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
@@ -204,3 +200,4 @@ Aunque se ha conseguido la información requerida a través de Instancia General
 # Anexo
 
 [Contrato de alquiler de la Oficina de Atención al Contribuyente situada en la calle hierro, 27](https://dl.airtable.com/4hp5I9MrTXQHIMp6vYmA_contrato%20arrendamiento%20local%20oac%20calle%20hierro.pdf).
+
