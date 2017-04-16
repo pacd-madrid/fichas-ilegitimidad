@@ -1,3 +1,5 @@
+/* Headers */
+
 h1, .h1, h2, .h2, h3, .h3 {
     margin-top: 22px;
     margin-bottom: 15px;
@@ -10,6 +12,9 @@ h1.title {
 h4.date {
     margin-bottom: 40px;
 }
+
+
+/* Images */
 
 .plotly {
     display: block;
@@ -26,7 +31,14 @@ h4.date {
     margin: auto;
 }
 
-.figure {
-    display: block;
-    margin: auto;
+.caption {
+    text-align: center;
+}
+
+
+/* Tables */
+
+.table {
+    border-top: 2px solid #2c3e50;
+    border-bottom: 2px solid #2c3e50;
 }

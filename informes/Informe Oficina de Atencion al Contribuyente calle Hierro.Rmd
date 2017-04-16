@@ -17,7 +17,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=F, cache=T, prompt=F, tidy=T, comment=NA, message=F, warning=F)
+knitr::opts_chunk$set(echo=F, cache=F, prompt=F, tidy=T, comment=NA, message=F, warning=F)
 ```
 
 ```{r}
@@ -32,11 +32,11 @@ El Ayuntamiento de Madrid no es una excepción, más bien al contrario, ya que e
 
 [^nota1]: http://www.bde.es/webbde/es/estadis/infoest/a1408.pdf
 
-```{r deuda-madrid, fig.width=8, fig.align="center", fig.cap="Fuente: Elaboración propia a partir de los datos del Banco de España."}
+```{r deuda-madrid, fig.width=8, fig.align="center", fig.cap="_Figura 1. Evolución de la deuda del Ayuntamiento de Madrid.<br>Fuente: Elaboración propia a partir de los datos del Banco de España._"}
 require(plotly)
 data = read.table("datos/deuda_ayuntamiento_madrid.csv", header = TRUE, sep=",")
 p <- plot_ly(data, x=~Año, y=~Deuda, type='bar', color=~Alcalde) %>%
-  layout(yaxis = list(title="Deuda (en millones de €)"), legend = list(y=100, orientation = 'h'))
+  layout(title="Evolución de la deuda del Ayuntamiento de Madrid", yaxis = list(title="Deuda (en millones de €)"), legend = list(y=100, orientation = 'h'), margin=list(t=90), separators=",.")
 p
 ```
 
@@ -68,30 +68,16 @@ La Auditoría Ciudadana pivota en torno al concepto de **ilegitimidad**, que no 
 
 A efectos de este informe entendemos por **Deuda Ilegítima** aquella contraída sin contar con la población y que vulnera derechos humanos, sociales, civiles, económicos, culturales, medioambientales o de género de una parte de la población en favor de los intereses de una minoría.
 
-# Descripción del caso auditado
-
-El presente informe presenta los resultados de la auditoría del arrendamiento de un local para uso como Oficina de Atención al Contribuyente situado en la calle Hierro, 27 Esq. calle Antracita, 3 (Barrio de Legazpi) en el Distrito de Arganzuela.
-
-![Oficina de Atención al Contribuyente de la calle Hierro](img/oac-calle-hierro.jpg){.img-center}
-
-```{r map, fig.height=4}
-require(leaflet)
-m <- leaflet() %>%
-  setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
-  addTiles() %>%
-  addMarkers(lat=40.3909201, lng=-3.6928518, popup="Oficina de Atención al Contribuyente")
-m
-```
-<br>
-
-Este local tiene una superficie de 754,10 m2. a nivel de calle y fue alquilado mediante contrato a la empresa inmobiliaria BuildingCenter, S.A.U. el 15 de julio de 2008 por un tiempo de duración de 10 años, siendo el precio de arrendamiento mensual 22.623 € sin I.V.A.
-
 # Metodología
 
 El proceso de Auditoría Ciudadana del distrito de Arganzuela ha seguido la metodología descrita en la figura 1.
 
 <img src="img/esquema-auditoria-distritos.png" alt="Fases de la auditoría" style="width:100%; margin=auto;"/>
-_Figura 1. Fases de la Auditoría Ciudadana._
+
+<p class="caption">
+_Figura 2. Fases de la Auditoría Ciudadana._
+</p>
+
 
 Tras la constitución del grupo auditor y la definición de los criterios utilizados para declarar un gasto o ingreso como ilegítimo, el proceso básicamente consta de las siguientes fases:
 
@@ -106,6 +92,27 @@ La ficha correspondiente a este caso puede consultarse en:
 4. **Elaboración del informe de caso**. Una vez analizadas las pruebas se realizará un informe como el presente para cada caso auditado donde se presentará de forma clara las pruebas analizadas y las conclusiones sobre la legitimidad o ilegitimidad del caso.
 
 5. **Elaboración del informe final del distrito**. Con todos los informes de los casos auditados se elaborará un informe final de auditoría del distrito que se trasladará al Ayuntamiento de Madrid para exigir el reconocimiento institucional de los casos declarados como ilegítimos y el no pago de la deuda generada por los mismos, así como el emprendimiento de acciones legales contra los principales responsables de los mismos.  
+
+# Descripción del caso auditado
+
+El presente informe presenta los resultados de la auditoría ciudadana del arrendamiento de un local para uso como Oficina de Atención al Contribuyente situado en la calle Hierro, 27 Esq. calle Antracita, 3 (Barrio de Legazpi) en el Distrito de Arganzuela.
+
+![Oficina de Atención al Contribuyente de la calle Hierro](img/oac-calle-hierro.jpg){.img-center}
+<p class="caption">
+_Figura 3. Fachada de la Oficina de Atención al Contribuyente de la calle Hierro, 27._
+</p>
+
+```{r map, fig.height=4, fig.cap="_Figura 4. Ubicación de la Oficina de Atención al Contribuyente de la calle Hierro, 27._"}
+require(leaflet)
+m <- leaflet() %>%
+  setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
+  addTiles() %>%
+  addMarkers(lat=40.3909201, lng=-3.6928518, popup="Oficina de Atención al Contribuyente")
+m
+```
+<br>
+
+Este local tiene una superficie de 754,10 m2. a nivel de calle y fue alquilado mediante contrato a la empresa inmobiliaria BuildingCenter, S.A.U. el 15 de julio de 2008 por un tiempo de duración de 10 años, siendo el precio de arrendamiento mensual 22.623 € sin I.V.A.
 
 ## Duración del análisis
 
@@ -125,13 +132,9 @@ Las fuentes de información utilizadas en la auditoría del presente caso han si
 
 Al amparo de la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno y de la Nueva Ordenanza de Transparencia de la Ciudad de Madrid aprobada en Pleno del día 27 de julio de 2016, se formularon las siguientes peticiones de información al Ayuntamiento:
 
-* Petición 2016/0728302[^nota2]. Solicitud del contrato del alquiler del local de la OAC.
+* [Petición 2016/0728302](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0728302.html). Solicitud del contrato del alquiler del local de la OAC.
 
-[^nota2]: https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0728302.html
-
-* Petición 2016/994705[^nota3]. Segunda solicitud del contrato de alquiler del local de la OAC. También se solicita la superficie del local y el coste de las obras de acondicionamiento.
-
-[^nota3]: https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-994705.html 
+* [Petición 2016/994705](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-994705.html). Segunda solicitud del contrato de alquiler del local de la OAC. También se solicita la superficie del local y el coste de las obras de acondicionamiento.
 
 Se realiza una segunda petición debido a que tras la primera petición el Ayuntamiento informa del coste del contrato de alquiler y la empresa arrendadora pero no proporciona copia del contrato de alquiler. Después de la segunda petición el Ayuntamiento envía copia del contrato que se adjunta en el anexo.
 
@@ -191,13 +194,17 @@ Aunque se ha conseguido la información requerida a través de Instancia General
 
 # Documentación y bibliografía
 
-* Álvarez Barba, Yago. _Descifra tu deuda. Guía de Auditoría Ciudadana Municipal_. GUE/NGL. 2016.
+- Álvarez Barba, Yago. _Descifra tu deuda. Guía de Auditoría Ciudadana Municipal_. GUE/NGL. 2016.
 
-* Fattorelli, María Lucía. _Auditoría Ciudadana de la Deuda. Experiencias y métodos_. CADTM y CETIM. 2013.
+- Boletín Oficial del Estado (BOE). [_Ley de Contratos del Sector Público_](https://www.boe.es/buscar/doc.php?id=BOE-A-2011-17887). Agencia Estatal Boletín Oficial del Estado. Edición actualizada a 30 de julio de 2015. 2015.
 
-* Plataforma Auditoría Ciudadana de la Deuda. _¿Por qué no debemos pagar la deuda? Razones y alternativas_. Icaria editorial SA. Barcelona 2013.
+- Boletín Oficial del Estado (BOE). [_Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno_](https://www.boe.es/buscar/act.php?id=BOE-A-2013-12887&p=20131221&tn=2). Agencia Estatal Boletín Oficial del Estado. Edición actualizada a 30 de julio de 2015. 2015.
 
-* ¿Quién debe a quién? _Vivir en Deudocracia_. Icaria editorial SA. Barcelona 2011.
+- Fattorelli, María Lucía. _Auditoría Ciudadana de la Deuda. Experiencias y métodos_. CADTM y CETIM. 2013.
+
+- Plataforma Auditoría Ciudadana de la Deuda. _¿Por qué no debemos pagar la deuda? Razones y alternativas_. Icaria editorial SA. Barcelona 2013.
+
+- ¿Quién debe a quién? _Vivir en Deudocracia_. Icaria editorial SA. Barcelona 2011.
 
 # Anexo
 
