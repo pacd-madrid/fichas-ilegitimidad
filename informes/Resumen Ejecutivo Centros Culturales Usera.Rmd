@@ -25,8 +25,8 @@ library(plotly)
 library(dplyr)
 ```
 
-El presente resumen ejecutivo sintetiza los principales resultados de la auditoría ciudadana de los **Cursos y Talleres de Formación Talleres de Formación en los Centros Culturales
-de Usera**. En el siguiente enlace se puede acceder al [informe completo](Informe_Centros_Culturales_Usera.html). 
+El presente resumen ejecutivo sintetiza los principales resultados de la auditoría ciudadana de los **Cursos y Talleres de Formación Talleres de Formación en los Centros Culturales de Usera**.
+En el siguiente enlace se puede acceder al [informe completo](Informe_Centros_Culturales_Usera.html).
 
 En esta auditoría se ha tratado de analizar los impactos socio-culturales, laborales, económicos y de género en las subcontratas que se han llevado a cabo en el período 2015-2016 y que han podido tener un efecto lesivo en la ciudadanía, beneficiado fundamentalmente a las empresas adjudicatarias.
 
@@ -34,18 +34,17 @@ En esta auditoría se ha tratado de analizar los impactos socio-culturales, labo
 
 Los centros culturales se construyeron en Madrid a finales de la década de los 70 con el objetivo de que no existiera ningún barrio sin equipamiento cultural y que todos los vecinos pudieran acceder a ellos de forma fácil. Pretendían poner la cultura al alcance de todos y crear tejido social. Más allá de su oferta cultural, que es importante, la principal misión de estos centros era hacer que los vecinos de un barrio se conociesen y conviviesen en un mundo que tiende a aislar a los individuos.
 
-En esta primera etapa, había una articulación entre las diversas entidades sociales del barrio y los Centros Culturales. Se daba una colaboración con la Junta Municipal, los colegios y las asociaciones vecinales (AA.VV.). Así, los centros culturales funcionaban casi de manera autogestionada y no se cobraba nada (aunque poco después la Consejería de Cultura comenzó a dar una pequeña ayuda para gastos de material).
+En esta primera etapa, había una articulación entre las diversas entidades sociales del barrio y los Centros Culturales. Se daba una colaboración con la Junta Municipal, los colegios y las asociaciones vecinales (AA.VV.). Así, los centros culturales funcionaban casi de manera autogestionada y no se cobraba nada.
 Se organizaban actividades para niños, actuaciones musicales, teatro, viajes culturales, participación en los Carnavales, en la Semana Cultural, fiestas del barrio... Se organizaban reuniones y charlas sobre problemáticas del barrio, el paro, la droga, etc.
 
-Con el paso del tiempo, los centros culturales empezaron a profesionalizarse, siendo los técnicos o los funcionarios los encargados de planificar los cursos, al tiempo que se empezaba a cobrar una tasa por los mismos. Y más adelante, con la llegada del PP al gobierno de Madrid en 1988, el Ayuntamiento de Madrid deja de gestionar directamente sus Centros Culturales, y empieza a adjudicar su gestión a empresas privadas, muchas veces ajenas a la Cultura y a sus objetivos. De esta manera los cursos y talleres de formación dejan paulatinamente de responder a las necesidades de las vecinas y vecinos de Madrid y, como se demuestra en el informe, empiezan a responder a la lógica lucrativa del mercado: cada vez menos cursos, con carácter menos cultural, menos profesores-monitores y en peores condiciones laborales.
+Con el paso del tiempo, los centros culturales empezaron a profesionalizarse, siendo los técnicos o los funcionarios los encargados de planificar los cursos, al tiempo que se empezaba a cobrar una tasa por los mismos. Y más adelante, con la llegada del PP al gobierno de Madrid en 1988, el Ayuntamiento de Madrid deja de gestionar directamente sus Centros Culturales, y empieza a adjudicar su gestión a empresas privadas, muchas veces ajenas a la Cultura y a sus objetivos. De esta manera los cursos y talleres de formación dejan paulatinamente de responder a las necesidades de las vecinas y vecinos de Madrid y, como se demuestra en el informe, empiezan a responder a la lógica lucrativa del mercado: cada vez menos cursos, con carácter menos cultural, menos profesores y en peores condiciones laborales.
 
 # Los Presupuestos en los Talleres de Formación en los Centros Culturales de Usera
 
 Uno de los primeros hallazgos de la auditoría se refiere a la evolución del presupuesto de los Talleres de Formación de los Centros Culturales de Usera.
-En el siguiente gráfico se puede ver como en el período 2009-2016 se ha producido un recorte de los recursos asignados a los talleres de formación en los Centros Culturales de Usera 
-de 381.904 €, reduciendo el presupuesto a menos de la tercera parte. En este mismo gráfico puede apreciarse también cómo el periodo de menor presupuesto de los talleres de formación coincide con el de mayor disminución de la deuda, por lo que se podría afirmar que la _deuda del Ayuntamiento de Madrid se ha pagado a costa de los recortes, entre otros, en los talleres de formación de los Centros Culturales del distrito de Usera_.
+En el siguiente gráfico se puede ver como en el período 2009-2016 se ha producido un recorte de los recursos asignados a los talleres de formación en los Centros Culturales de Usera de 381.904 €, reduciendo el presupuesto a menos de la tercera parte. En este mismo gráfico puede apreciarse también cómo el periodo de menor presupuesto de los talleres de formación coincide con el de mayor disminución de la deuda, por lo que se podría afirmar que _la deuda del Ayuntamiento de Madrid se ha pagado a costa de los recortes, entre otros, en los talleres de formación de los Centros Culturales del distrito de Usera_.
 
-```{r evolucion-presupuesto-centros-culturales-usera-deuda, fig.width=8, fig.align="center", fig.cap="_Figura 12. Evolución del presupuesto de los centros culturales de Usera y la deuda del Ayuntamiento.<br>Fuente: Elaboración propia a partir de los datos de la Junta Municipal del Distrito de Usera y el Banco de España._"}
+```{r evolucion-presupuesto-centros-culturales-usera-deuda, fig.width=8}
 require(plotly)
 data = read.table("datos/evolucion_presupuesto_centros_culturales_usera_vs_deuda.csv", header = TRUE, sep=",")
 p <- plot_ly(data, x=~Año, y=~Presupuesto, type="scatter", mode="lines", name="Presupuesto adjudicado", hoverinfo = 'text', text = ~paste('Año: ', Año, '</br>Cantidad: ', format(Presupuesto, decimal.mark=",", big.mark="."), "€")) %>%
@@ -57,98 +56,56 @@ p
 
 # Pérdida de calidad de los talleres
 
-En el periodo estudiado se ha observado un descenso de las matriculadiones del 17%, lo que denota que los talleres cada vez interesan a menos gente, al tiempo que la ratio de alumnos por curso se ha incrementado en un 55,84%.
+En el periodo 2010-2015 se ha observado un descenso de las matriculaciones del 53,22% (1.818 alumnos menos), lo que denota que los talleres cada vez interesan a menos gente.
 
-Cada vez se ofrecen menos materias (de 120 cursos en el curso 2014-2015 se pasa a 69 en siguiente curso), pero aumentan las horas totales programadas (de 6.727 a 7.276), lo que resulta más rentable para la empresa, ya que han de contratar a menos profesores y pueden matricular más alumnos en cada clase. En comparación con otros distritos Usera ocupa el quinto puesto por la cola, tal y como puede apreciarse en el siguiente gráfico, lo cual Llama bastante la atención al ser uno de los distritos con indicadores socioeconómicos más desfavorables (Tasa de paro registrada, Renta Disponible per cápita, analfabetismo, etc.), y que, por tanto, requeriría mayor inversión en formación. 
+En relación con el número de horas, se han impartido 10.850 horas menos, lo que se traduce en una disminución del 60,83%.
 
-```{r distribucion-cursos-distritos, fig.width=6, fig.align="center", fig.cap="_Figura 14. Distribución del número de cursos impartidos en los centros culturales por distritos.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
+En comparación con otros distritos, Usera ocupa el penúltimo puesto en relación con el número de cursos/10.000 habitantes, tal y como puede apreciarse en el siguiente gráfico, lo cual llama bastante la atención al ser uno de los distritos con indicadores socioeconómicos más desfavorables (Tasa de paro registrada, Renta Disponible per cápita, analfabetismo, etc.), y que, por tanto, requeriría mayor inversión en formación.
+
+```{r distribucion-cursos-distritos, fig.width=6, fig.align="center"}
 require(plotly)
-data = read.table("datos/distribucion_cursos_distritos.csv", header = TRUE, sep=",")
-p <- plot_ly(data, x=~Cursos, y=~reorder(Distrito, Cursos), type="bar", color=~Color, orientation="h", hoverinfo="text", text =~Cursos) %>%
-  layout(title = "Distribución del número de cursos impartidos en los centros culturales por distritos", xaxis = list(title="Número de cursos", gridcolor = "#bbb", tickformat="d"), yaxis = list(title=""), showlegend = FALSE, margin=list(l=130))
+data = read.table("datos/cursos_habitantes_distritos.csv", header = TRUE, sep=",")
+p <- plot_ly(data, x=~Cursos.habitantes, y=~reorder(Distrito, Cursos.habitantes), type="bar", color=~Color, orientation="h", hoverinfo="text", text =~Cursos.habitantes) %>%
+  layout(title = "Distribución del número de cursos por cada 10000 habitantes<br> impartidos en los centros culturales por distritos", xaxis = list(title="Cursos/10.000 habitantes", gridcolor = "#bbb", tickformat="d"), yaxis = list(title=""), showlegend = FALSE, margin=list(l=130, t=60, b=80))
 p
 ```
 
 En cuanto al tipo de cursos ofrecidos, se observa que cada vez los cursos responden menos a las necesidades socioculturales del distrito, ofreciendose principalmente cursos que resultan más rentables para las empresas adjudicatarias por suponer un menor gasto en material. Así, como puede apreciarse en el siguiente gráfico se programan prioritariamente cursos del Área “Actividad corporal” que, además de resultar más rentables para la empresa, promocionan menos la formación humanística y profesional de los alumnos.
 
-```{r distribucion-cursos, fig.width=8, fig.align="center", fig.cap="_Figura 13. Distribución de tipos de cursos impartidos en Usera en el curso 2014-2105.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
+```{r distribucion-cursos, fig.width=6, fig.align="center"}
 require(plotly)
 data = read.table("datos/distribucion_cursos_usera.csv", header = TRUE, sep=",")
 p <- plot_ly(data, labels=~Tipo.curso, values=~Cursos, type="pie", name="Presupuesto adjudicado", textinfo = 'label+percent', textposition = 'inside',
         insidetextfont = list(color = '#FFFFFF')) %>%
-  layout(title = "Distribución de tipos de cursos impartidos en Usera en el curso 2014-2105", xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE), yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+  layout(title = "Distribución de tipos de cursos impartidos en Usera<br> en el curso 2014-2105", xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE), yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE), margin=list(t=60))
 p
 ```
 
 Llama también la atención que el número de cursos y talleres en el grupo de “Adquisición de conocimientos”, los más necesarios para el tipo de población del distrito, haya sido de 25, cuando en distritos con indicadores similares se duplican y hasta triplican: tal es el caso de Villaverde con 62 cursos o Puente de Vallecas con 43. Resulta evidente, a la luz de de los indicadores socioeconómicos que son mucho más necesarios los cursos de formación para desempleados, y de integración de los diferentes sectores de población (cursos de español, interculturalidad, etc.). Sin embargo, apenas se ofrece otra cosa que cursos de ocio y tiempo libre.
 
-En cuanto a los materiales, como según el Pliego de Prescripciones Técnicas, _“La empresa adjudicataria deberá aportar los materiales necesarios tanto fungibles como inventariables para la realización de cada uno de los talleres... En el taller de informática, equipos actualizados...”_, apenas se programan cursos donde es necesaria una mayor inversión en materiales, que serían de mayor utilidad para los alumnos, pero suponen una mayor inversión para la empresa adjudicataria, tales como Informática general y aplicaciones informáticas (solamente se programan 4 horas semanales para el curso 2015-2016), las artes aplicadas y manualidades (con 32 horas semanales) o los audiovisuales (con 2 horas semanales).
-Material necesario: Escáner, PC, impresora, trípodes, focos para artes escénicas. Caballete por alumno para pintura, etc. Pirograbador para manualidades. Dos máquinas de coser.
-
+En cuanto a los materiales, como según el Pliego de Prescripciones Técnicas, _“La empresa adjudicataria deberá aportar los materiales necesarios tanto fungibles como inventariables para la realización de cada uno de los talleres... En el taller de informática, equipos actualizados...”_, apenas se programan cursos donde es necesaria una mayor inversión en materiales, que serían de mayor utilidad para los alumnos. Así, para el curso 2015-2016 solamente se programaron 5 horas semanalaes para Informática general y aplicaciones informáticas, 33 horas semanales para artes aplicadas y manualidades y 4 horas semanales para artes escénicas y audiovisuales.
 
 # Degradación de las condiciones laborales del profesorado
 
-La Junta Municipal del Distrito de Usera no ha facilitado datos sobre las condiciones sociolaborales de los profesores: Convenios / Condiciones laborales, salariales etc. No obstante, a partir de varias reuniones con los sindicatos y de varias encuestas pasadas a los trabajadores se ha observado que la/os trabajadora/es tienen carencia de recursos y materiales para poder impartir con calidad los cursos. De esta manera, la empresa se embolsa más beneficios, al quedarse con dinero, que en el pliego presupuestan y no gastan.
-En algunos casos, alguna/os trabajadora/es, en su responsabilidad profesional, asumen realizar fotocopias o aportar materiales propios, lo que conlleva una tensión añadida a su trabajo.
+La Junta Municipal del Distrito de Usera no ha facilitado datos sobre las condiciones sociolaborales de los profesores: Convenios / Condiciones laborales, salariales etc. No obstante, a partir de varias reuniones con los sindicatos y de varias encuestas pasadas a los trabajadores se ha observado:
 
-También suele haber demora en el pago de nóminas. Una parte del sueldo se hace en "pago en especie". No cumpliendo lo acordado y reteniéndole 2€ por hora, para "un Curso de inglés" que, hasta el momento, no saben cómo lo van a dar.
+- Las/os trabajadoras/es tienen carencia de recursos y materiales para poder impartir con calidad los cursos. El material está viejo y no lo repone la empresa adjudicataria. En ocasiones, los profesores tienen que comprar material, o los mismos alumnos han de cubrir estos gastos para realizar los talleres. De esta manera, la empresa se reserva unos beneficios que en el pliego presupuestan y no gastan.
 
+- En cuanto a relaciones laborales, no se cumplen las condiciones del Convenio Colectivo de marco estatal de Ocio Educativo y Animación Sociocultural que rige para los docentes de Centros Culturales en cuanto a períodos de prueba, jornada de trabajo, desplazamientos, formación.
 
-# Empresas adjudicatarias: Aula Intercultural SL y Virensis SA
+- Las retribuciones salariales son cada vez más precarias: reducción permanente del salario, retraso en el pago de nóminas, pagas extraordinarias, etc.
 
-En cuanto a las empresas adjdicatiras, Aula Intercultural SL en 2014-2015 y Virensis SA en 2015-2016, se han observado bastantes irregularidades en el proceso de contratación e incluso ilegalidades en el caso de la primera.
+- No se cumplen las condiciones firmadas en el contrato en relación con la provisión de coordinador y personal administrativo, lo que dificulta aún más la labor del profesorado.
 
-Según datos del Registro Mercantil la empresa Aula Intercultural SL se constituyó el 20 de marzo del año 2000 pero solamente se dispone de información económica hasta el año 2005.
-Posiblemente se haya producido el cierre de la hoja registral desde el 1 de enero de 2015, debido al **incumplimiento de la obligación de depositar sus cuentas**.
+Estas situaciones ante las que no parecen tomarse medidas efectivas han obligado a los profesores de estos Centros a presentar una petición promocionada por Change.org: “No a profesores "Low cost" de Centros Culturales”.
 
-Llama la atención que en el concurso de licitación se admita como acreditación de la solvencia económico financiera un certificado expedido, con fecha 12/05/2015, por la propia empresa adjudicataria. Cuando menos, sorprende que el Ayuntamiento de Madrid admita el certificado expedido por una empresa que lleva desde el año 2005 sin presentar sus cuentas ante el Registro Mercantil y que, en el año 2011, por deudas, la Seguridad Social le requirió para embargo de bienes.
+> “Desde hace años los profesores de talleres en Centros culturales, licenciados y titulados, estamos cobrando un sueldo que no llega ni a 7€/hora a veces menos de 6€/hora. Lo que aumenta la desmotivación del profesorado y baje el nivel y la calidad de los centros públicos. Deberían ser los ayuntamientos los que se ocuparan de los centros culturales públicos de las ciudades y no empresas privadas subcontratadas." (Petición dirigida al Ayuntamiento de Madrid (noviembre de 2016).
 
-El importe del contrato adjudicado a Aula Intercultural SL fue de 171.677 euros, con IVA, aunque el Ayuntamiento no ha proporcionado datos sobre la facturación real de la empresa. 
-Por otro lado, otra posible fuente de ingresos para la empresa adjudicataria sería la cesión de espacios y medios, que son propiedad de la Junta, para realizar actividades externas a los servicios culturales de los cursos propios de los Centros. Este punto habría que aclararlo ya que supondría un capítulo importante para calcular los ingresos de las empresas. En la “Cesión de espacios y medios de los Centros” se previeron 6.682 horas y se han cedido 13.438 horas.
+# Empresas adjudicatarias:  Virensis SA y Aula Intercultural SL
 
-**Conclusiones**:
+Las empresas adjudicatarias de los cursos 2014-2015 y 2015-2016 han sido Virensis SA y Aula Intercultural SL respectivamente.
 
--   Entendemos que el concepto “valor estimado” del que habla el Contrato se refiere a: “La inversión que el Ayuntamiento considera necesaria que tiene que llevar a cabo la empresa adjudicataria para prestar dignamente el servicio de organizar los talleres de formación en los seis Centros Culturales del Distrito de Usera”.
-
--   En este caso, asciende a 324.655 euros. Y si, por otra parte, descartamos los ingresos por la cesión de locales, los únicos ingresos de la empresa adjudicataria, en nuestro caso, Aula Intercultural SL serían los 171.677 euros detallados en la Memoria de Contratos. Es decir, la mitad del valor estimado.
-
--   Si estos cálculos responden a la realidad, entendemos que la empresa, para conseguir algún beneficio por la prestación de sus servicios, tenga que degradar las condiciones laborales, salariales de los profesores y ahorrar en la provisión de materiales. La responsabilidad, en este caso, de la pérdida de calidad de los talleres habría que atribuírsela al Ayuntamiento que establece esas condiciones de licitación. De hecho, en el Contrato para el curso 2016-2017 las condiciones han cambiado notablemente:
-
-    - Valor estimado del contrato: 526.319,30 euros (IVA excluido).
-    - Presupuesto base de licitación: 318.423,18 euros (IVA incluido).
-    - Contratista: Tritoma SL.
-    - Importe de adjudicación: 303.924,84 euros (IVA incluido).  
-    - Ventajas de la oferta adjudicataria: la empresa “Tritoma, Sociedad Limitada”, es el licitador que ha alcanzado la mayor puntuación en el procedimiento, siendo por lo tanto la oferta económicamente más ventajosa[^22].
-
-Desconocemos, hasta el momento, si este notable aumento de la inversión por parte de la Junta Municipal del Distrito de Usera va a repercutir en las condiciones laborales de los profesores y la provisión de materiales o únicamente en el mayor beneficio de la empresa adjudicataria.
-
-El único criterio para su adjudicación sigue siendo “la oferta económica más ventajosa”. No se tienen en cuenta cláusulas sociales y culturales que, en nuestra opinión, serían necesarias para mejorar las condiciones laborales de los profesores y la calidad del servicio cultural.
-
-En cuanto a la empresa Virensis SA, a diferencia de Aula Intercultural SL, parece que cumple con la obligación de presentar las cuentas anuales.
-
-En el concurso de licitación correspondiente a los “Talleres de Formación en los Centros Culturales de Usera” en el curso 2015-2016, se presentaron cinco ofertas:
-
-- G.E. Escuelas Urbanas SL
-
-- Tritoma SL
-
-- Innovación y Desarrollo Local SL
-
-- Virensis SA y
-
-- Aula Intercultural SL
-
-El desglose de las ofertas presentadas por cada una de las empresas aparece detallado en la siguiente tabla. 
-
-| Ofertas                          |    Importe | Horas extras talleres | Incremento de materiales | Coste/hora |
-|:---------------------------------|-----------:|----------------------:|-------------------------:|-----------:|
-| G.E. Escuelas Urbanas SL         | 176.079,20 |                     - |                 5.512,76 |            |
-| Tritoma SL                       | 192.454,57 |                 1.819 |                20.045,00 |            |
-| Innovación y Desarrollo Local SL | 145.793,58 |                   372 |                        - |            |
-| Virensis SA                      | 175.991,16 |                   372 |                 9.060,33 |            |
-| Aula Intercultural SL            | 171.677,22 |                   909 |                10.658,00 |            |
-
-Y, teniendo en cuenta las horas programadas para el distrito de Usera, el coste/hora que sale para cada oferta aparece en la siguiente tabla. 
+En el concurso de licitación correspondiente a los Talleres de Formación en los Centros Culturales de Usera en el curso 2015-2016 se presentaron cinco ofertas que aparecen desglosadas en la siguiente tabla.
 
 | Ofertas                          | Importe (1) | Horas lectivas | Horas extras talleres | Horas totales (2) | Coste/hora (1)/(2) |
 |:---------------------------------|------------:|---------------:|----------------------:|------------------:|-------------------:|
@@ -158,71 +115,19 @@ Y, teniendo en cuenta las horas programadas para el distrito de Usera, el coste/
 | Virensis SA                      |  175.991,16 |          7.276 |                   372 |             7.648 |              23,01 |
 | Aula Intercultural SL            |  171.677,22 |          7.276 |                   909 |             8.185 |             20,971 |
 
-
 Aunque la oferta presentada por Innovación y Desarrollo Local SL, desde el punto de vista económico, fue la más baja, se excluyó por considerarla como “Baja temeraria”.
 Por tanto, las dos ofertas que, desde el punto de vista de coste/hora, serían las más baratas fueron Aula Intercultural SL (20,97 €/hora) y Tritoma SL (21,16 €/hora).
 
 Es evidente que la oferta más barata corresponde a Aula Intercultural SL, pero independientemente de los criterios establecidos en el Pliego de Cláusulas Administrativas para calificar y valorar las ofertas, habría que haber considerado que Tritoma SL ofrecía un incremento de materiales por importe de 20.045 € en relación a los 10.658 € que figuraban en la propuesta de Aula Intercultural SL. Además, el número de horas totales ofrecidas por Tritoma SL suponían un incremento cuantitativo y cualitativo sustancialmente superior al de Aula Intercultural SL, lo que hubiera redundado en beneficio de la ciudadanía.
 
+Como el único criterio para su adjudicación era “la oferta económica más ventajosa”, no se tuvieron en cuenta cláusulas sociales y culturales que, en nuestra opinión, serían necesarias para mejorar las condiciones laborales de los profesores y la calidad del servicio cultural. Así el contrato fue adjudicado a Aula Intercultural SL fue de 171.677 euros.
+
+Pero lo más grave fue que la solvencia de la empresa Aulta Intercultura SL era más que dudosa y no cumplía las condiciones para poder presentarse al concurso de licitación.
+Según datos del Registro Mercantil la empresa Aula Intercultural SL se constituyó el 20 de marzo del año 2000 pero solamente se dispone de información económica hasta el año 2005.
+La hoja registral se halla cerrada desde el 1 de enero de 2015 debido al **incumplimiento de la obligación de depositar sus cuentas**. A pesar de ello no nos explicamos cómo el Ayuntamiento admitió un certificado de solvencia emitido por la propia empresa obviando que la empresa lleva desde el año 2005 sin presentar sus cuentas ante el Registro Mercantil y que, en el año 2011, por deudas, la Seguridad Social le requirió para embargo de bienes.
+
+Otro aspecto oscuro que revela el informe es la práctica generalizada de cesión de espacios y medios públicos a las empresas adjudicatarias para realizar actividades externas a los servicios culturales de los cursos propios de los Centros. Este punto habría que aclararlo ya que supondría un capítulo importante para calcular los ingresos de las empresas. En la “Cesión de espacios y medios de los Centros” se previeron 6.682 horas y se han cedido 13.438 horas.
+
 # Propuestas a futuro
 
-## Dirigidas al Ayuntamiento
-
-1.  Cesión de la Gestión Cultural a los colectivos ciudadanos, asociaciones de vecinos, asociaciones culturales y empresas culturales de la zona. La toma de decisiones será colectiva y asamblearia, pudiendo elegirse por los colectivos implicados un equipo responsable para llevar a cabo las decisiones tomadas por la mayoría.
-
-2.  Coordinación por, al menos, un Técnico Cultural capacitado, dinamizador y relacionado con AGETEC, la Asociación de Gestores y Técnicos Culturales de la Comunidad de Madrid. Este empleado municipal servirá de enlace entre los gestores ciudadanos del Centro Cultural y el Ayuntamiento de Madrid.
-
-3.  Los colectivos concesionarios del Centro Cultural estarán obligados a presentar ante el Ayuntamiento de Madrid una Memoria de Actividades anual, fidedigna y exhaustiva, mediante la cual se evaluará y fiscalizará la gestión realizada.
-
-4.  Cesión de las instalaciones y espacios existentes para uso privilegiado, pero no excluyente, de los colectivos socio-culturales del barrio que organizarán talleres, cursos, seminarios, etc.
-
-5.  El uso de los locales de ensayo, talleres, aulas y demás instalaciones del Centro Cultural será gratuito para los vecinos y vecinas del barrio que a su vez participarán en las tareas de mantenimiento y dinamización del mismo.
-
-6.  Por supuesto, la gestión y cualquier trabajo se realizará sin ánimo de lucro, lo que no excluye el cobro de una entrada apropiada o una aportación para materiales en aquellos eventos, actividades, cursos, o espectáculos que así se considere necesario.
-
-7.  En la programación prevalecerá el trabajo de los artistas cercanos al barrio, sin que sea excluyente la integración de otros artistas cuando se considere de interés.
-
-8.  Creación de una Red de Centros Culturales Madrileños para intercambiar experiencias, exposiciones, eventos, etc.
-
-9.  En una Sociedad del Conocimiento como la nuestra, no se pueden excluir del concepto cultural las nuevas Tecnologías de la Información y la Comunicación (TIC), por ello se actuará también con políticas activas para acabar con la “brecha digital” proveyendo para ello en 3 sentidos:
-
-  -   Centro de Acceso Público a Internet (CAPI) para vecinas y vecinos.
-
-  -   Centro de Difusión Tecnológica Empresarial (CDTE) para emprendedores, comercios y pymes del barrio.
-
-10. Difusión apropiada de la actividad mediante una plataforma colectiva de la Red de Centros Culturales Madrileños, un sitio web personalizado para cada Centro Cultural en particular y el uso correcto y cotidiano de las Redes Sociales.
-
-11. Las herramientas informáticas usadas estarán implementadas en su totalidad en Software Libre y Código Abierto.
-
-12. Los trabajos producidos por artistas, autores y colectivos en esta Red de Centros Culturales Madrileños serán licenciados bajo Licencias Libres, tales como GNU, Copyleft y Creative Commons.
-
-13. Creación de un repositorio digital de documentos, fotografías y vídeos para uso común y libre de los eventos, trabajos, cursos, talleres y demás actividades desarrolladas en la Red de Centros Culturales Madrileños.
-
-## Dirigidas a la ciudadanía
-
-1.  En la reunión de la Junta Municipal de Usera con la Mesa de las AA.VV. de Usera propone el Documento de la Junta: _“Impulso de los Centros Culturales, para convertirlos en centros de actividad cultural y comunitaria.”_
-
-2.  En el Programa electoral para las Elecciones Municipales de Ahora Madrid se dice: _“Elaborar una hoja de ruta para la remunicipalización de los servicios públicos”_[^32] a través de:
-
-    a.  Auditar contratos integrales para analizar su legalidad y sus incumplimientos y establecer un sistema de control y sanciones riguroso.
-
-    b.  Fijar una estrategia de recuperación progresiva de la gestión pública de los servicios municipales externalizados a las grandes empresas y grupos económicos.
-
-3.  Reunión con la Junta, con vocales de Ahora Madrid y vecinos.
-
-4.  Difusión pública.
-
-5.  Encuesta a los alumnos de los cursos.
-
-6.  Para una programación actualizada de los Centros Culturales habría que sentarse con las entidades sociales del barrio (AA.VV., movimientos sociales, colectivos, colegios, parroquias, todo lo que funcione de manera colectiva) y detectar, con ellas, las situaciones y carencias culturales más importantes en esta nueva situación:
-
-    a.  Educación intercultural.
-
-    b.  Actividades de intercambio.
-
-    c.  Cine Fórum, teatro, etc.
-
-7.  Programar desde la Junta charlas formativas sobre temas de actualidad para “convertir los Centros Culturales en centros de actividad cultural y comunitaria”.
-
-8.  En las nuevas contrataciones se apliquen las cláusulas sociales.
-
+El informe se cierra con una serie de propuestas y recomendaciones para el Ayuntamiento insistiendo en que los Centros Culturales deben volver a sus orígenes y responder a las necesidades reales de los barrios. Para ello se insta a dar los pasos necesarios para volver a dar más protagonismo a la ciudadanía en la planificación y autogestión de los Talleres de Formación de los Centros Culturales, desterrando el ánimo de lucro en su gestión y abordando la remunicipalización de los mismos si fuese preciso.
