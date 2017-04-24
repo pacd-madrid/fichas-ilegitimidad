@@ -25,6 +25,8 @@ library(plotly)
 library(dplyr)
 ```
 
+[Descargar versión pdf](resumen_ejecutivo_centros_culturales_usera.pdf)
+
 El presente resumen ejecutivo sintetiza los principales resultados de la auditoría ciudadana de los **Cursos y Talleres de Formación Talleres de Formación en los Centros Culturales de Usera**.
 En el siguiente enlace se puede acceder al [informe completo](Informe_Centros_Culturales_Usera.html).
 

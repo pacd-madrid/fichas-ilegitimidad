@@ -1,23 +1,23 @@
-Distrito,Cursos.habitantes,Color
-Chamberí,7.65,A
-Usera,9.95,B
-Puente de Vallecas ,9.97,A
-Ciudad Lineal ,10.31,A
-Centro ,10.35,A
-Hortaleza,10.36,A
-Carabanchel ,10.63,A
-Retiro ,10.7,A
-Villa de Vallecas,11.74,A
-Fuencarral-El Pardo,14.01,A
-Todos los Distritos,15.44,C
-Tetuán,16.78,A
-Salamanca,16.99,A
-Vicálvaro ,17.35,A
-San Blas-Canillejas,18.52,A
-Arganzuela,18.86,A
-Moratalaz ,21.52,A
-Moncloa-Aravaca ,22.12,A
-Latina ,22.48,A
-Chamartín,23.06,A
-Villaverde,23.51,A
-Barajas,44.75,A
+Distrito,Cursos.habitantes,Cursos.informatica,Color
+Arganzuela,18.86,1.85,A
+Barajas,44.75,3.73,A
+Carabanchel ,10.63,1.28,A
+Centro ,10.35,0.15,A
+Chamartín,23.06,1.12,A
+Chamberí,7.65,0.22,A
+Ciudad Lineal ,10.31,0.61,A
+Fuencarral-El Pardo,14.01,0.86,A
+Hortaleza,10.36,0.58,A
+Latina ,22.48,0.46,A
+Moncloa-Aravaca ,22.12,1.04,A
+Moratalaz ,21.52,2.08,A
+Puente de Vallecas ,9.97,0.79,A
+Retiro ,10.7,1.26,A
+Salamanca,16.99,0,A
+San Blas-Canillejas,18.52,1.89,A
+Tetuán,16.78,1.57,A
+Todos los Distritos,15.44,0.93,C
+Usera,9.95,0.3,B
+Vicálvaro ,17.35,0.86,A
+Villa de Vallecas,11.74,0.4,A
+Villaverde,23.51,0.92,A

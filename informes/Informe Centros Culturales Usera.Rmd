@@ -25,6 +25,7 @@ library(plotly)
 library(dplyr)
 ```
 
+[Descargar versión pdf](informe_centros_culturales_usera.pdf)  
 [Resumen Ejecutivo del Informe](Resumen_Ejecutivo_Centros_Culturales_Usera.html)
 
 # Introducción
@@ -503,7 +504,18 @@ La media trimestral de alumnos matriculados ha descendido:
 [^6]: [Memoria de cumplimiento de objetivos 2014](http://www.madrid.es/UnidadesDescentralizadas/Presupuestos/EjecucionPresupuestaria/MemoriasCumplimientoObjetivos/Ficheros/Memoria_2014_vol_3.pdf). Volumen 3: páginas 66 a 69.
 [^7]: [Memoria de cumplimiento de objetivos 2015](http://transparencia.madrid.es/UnidadesDescentralizadas/Presupuestos/EjecucionPresupuestaria/MemoriasCumplimientoObjetivos/Ficheros/tomo3_2015.pdf). Volumen 3: páginas 75 a 79.
 
-Se ha producido un descenso en el número de alumnos del 17%, superior al 0,7% que ha supuesto la disminución de la población del distrito en el mismo período de tiempo.
+En la figura 13 se puede ver la evolución de las matriculaciones en el periodo estudiado.
+
+```{r alumnos-matriculados, fig.width=8, fig.align="center", fig.cap="_Figura 13. Evolución de las matriculaciones en los Talleres de Formación de los Centros Culturales de Usera.<br>Fuente: Elaboración propia a partir de los datos de la Junta Municipal del Distrito de Usera._"}
+require(plotly)
+data = read.table("datos/evolucion_alumnos_matriculados.csv", header = TRUE, sep=",")
+p <- plot_ly(data, x=~Año, y=~Alumnos, type='bar') %>%
+  layout(title="Evolución de las matriculaciones en los Talleres de Formación de Usera", yaxis = list(title="Media trimestral de matriculaciones"), legend = list(y=100, orientation = 'h'))
+p
+```
+
+Si se compara la evolución de la población en el Distrito de Usera en el período 2010-2015 y el número de alumnos matriculados entre 2010 y 2015, obtenemos que mientras la población ha disminuido un 6,36% (9.011 habitantes), el descenso en el número de alumnos ha supuesto un 53,22% (1.818 alumnos).
+
 Pero la ratio media trimestral de alumnos por clase ha aumentado:
 
 - 2014-2015: 16 alumnos por clase
@@ -511,44 +523,65 @@ Pero la ratio media trimestral de alumnos por clase ha aumentado:
 
 El incremento del número de alumnos por clase ha sido del 55,84%.
 
-### Horas contratadas
+### Horas contratadas y facturadas
 
-Sin embargo, la previsión de horas contratadas para 2015-2016 ha aumentado:
+La figura 14 muestra la comparativa de las horas contratadas y facturadas en los Talleres de Formación de los Centros Culturales de Usera en los cursos 2014-2015 y 2015-2016.
 
-- 2014-2015: Realizadas: 6.727 horas[^8]
-- 2015-2016: Previstas: 7.276[^9] Realizadas: 6.987
+```{r horas-contratadas-facturadas, fig.width=8, fig.align="center", fig.cap="_Figura 14. Horas contratadas y facturadas en los cursos de 2014-2015 y 2015-2016.<br>Fuente: Elaboración propia a partir del Pliego de Prescripciones Técnicas de los cursos[^8] y de los datos facilitados por la Junta del Distrito de Usera[^9]._"}
+require(plotly)
+data = read.table("datos/horas_contratadas_facturadas.csv", header = TRUE, sep=",")
+p <- plot_ly(data, x=~Curso, y=~Horas, type='bar', color=~Tipo) %>%
+  layout(title="Horas contratadas y facturadas en los cursos de 2014-2015 y 2015-2016 de Usera", yaxis = list(title="Horas"), legend = list(y=100, orientation = 'h'), margin=list(t=70))
+p
+```
 
 [^8]: [Memoria de cumplimiento de objetivos 2014](http://www.madrid.es/UnidadesDescentralizadas/Presupuestos/EjecucionPresupuestaria/MemoriasCumplimientoObjetivos/Ficheros/Memoria_2014_vol_3.pdf). Volumen 3: páginas 66 a 69.
 [^9]: [Pliego de prescripciones técnicas](http://www.madrid.es/UnidadesDescentralizadas/PerfilContratante/PC_Distritos/PC_Usera/A%C3%91O%202014/SERVICIOS/ficheros/PLIEGO%20DE%20PRESCRIPCIONES%20TECNICAS.pdf). Anexo II.
 
-Y la ratio número de horas por curso se ha incrementado también:
+En relación con las horas contratadas se ha producido una disminución de 325 horas lo que supone un 4,28% menos.
+En cuanto a las horas facturadas podemos observar que en valores absolutos se ha producido una disminución de 299 horas que significa un 4,11% menos.
 
-- 2014-2015: 56 horas por curso realizadas (6.727 horas para 120 cursos)
-- 2015-2016: 111 horas por curso programadas (6.987 horas para 63 cursos)
+Las horas facturadas por Virensis SA en el curso 2014-2015 comparadas con las contratadas que figuran en el Pliego de Prescripciones Técnicas vemos que se ha impartido 332 horas menos, lo que supone un 4,37%.
+En el caso de Aula Intercultural SL las horas facturadas en el curso 2015-2016 han supuesto un 4,21% menos que en valores absolutos significan 306 horas menos.
 
-Se ha producido un incremento del 106%.
+Desgraciadamente no se ha podido contemplar una serie histórica más amplia debido a que la información suministrada por la Junta del Distrito de Usera entre los cursos 2010-2011 y 2013-2014 ha sido incompleta y heterogénea.
+No obstante, de la información facilitada por la Junta del Distrito de Usera para el curso 2011-2012 se han podido obtener un número aproximado en torno a las 12.970 horas. 
+Este dato demuestra que la tendencia en la evolución del número de horas impartidas ha sido claramente decreciente en los últimos años. 
 
-### Cursos programados
+Llama la atención la discrepancia existente entre las horas facturadas por Virensis SA en el curso 2014-2015 (7.269 horas) y las que constan como realizadas en la Memoria de cumplimiento de objetivos 2014 (6.727 horas), lo que supone una diferencia de 542 horas.  
+Sería importante que la Junta del Distrito de Usera aclarase estas discrepancias.
 
-Los cursos programados en el conjunto de Centros han descendido:
 
-- 2014-2015: 120 cursos.
-- 2015-2016: 69 cursos[^10]
+### Talleres programados
 
-[^10]: [Memoria de cumplimiento de objetivos 2015](http://transparencia.madrid.es/UnidadesDescentralizadas/Presupuestos/EjecucionPresupuestaria/MemoriasCumplimientoObjetivos/Ficheros/tomo3_2015.pdf).
+A pesar de la respuesta dada por la Junta Municipal del Distrito de Usera a nuestra petición presentada con fecha 23/03/2017 no se han aclarado las dudas planteadas[^9a] en relación con el concepto “Cursos” que utiliza como indicador en las Memorias de Cumplimiento de Objetivos publicadas por el Ayuntamiento para los años 2014 y 2015.
+ 
+[^9a]: El concepto “Curso” sigue siendo contradictorio en la medida en que los datos considerados en la Memoria de Cumplimiento de Objetivos se refieren al año natural cuando deberían vincularse con el curso académico (octubre-junio) a efectos de poder comparar en términos homogéneos.
 
-Se ha producido un descenso del 47,5%.
+Tanto en el Pliego de Prescripciones Técnicas (Anexo II), como en los Programas publicados por los Centros Culturales para el Curso 2015-2016, como en el Informe anual de la empresa adjudicataria Aula Intercultural SL, el término utilizado es el de “Talleres” para relacionar las actividades realizadas en los Centros Culturales.
 
-La media de los cursos programados por cada Centro Cultural ha descendido:
+El número de Talleres relacionados para este Curso 2015-2016 es de 64 y si tenemos en cuenta los Grupos serían 128.
+Para el Curso 2014-2015 en el Pliego de Prescripciones Técnicas (Anexo II) se relacionan 68 Talleres y 130 Grupos.
 
-- 2014-2015: 20 cursos: 120 cursos dividido por 6 Centros
-- 2015-2016: 10 cursos: 63 cursos dividido por 6 Centros
+En conclusión, los datos contenidos en el Anexo II del Pliego de Prescripciones Técnicas para los cursos 2014-2015 y 2015-2016 difieren de los facilitados en la “Memoria de Cumplimiento de Objetivos”^[9b] publicada por el Ayuntamiento de Madrid.
 
-Ha supuesto un descenso del 50%.
+[^9b]: [Memoria de Cumplimiento de Objetivos 2015](Memoria de cumplimiento de objetivos 2015). La información correspondiente al distrito de Usera se encuentra en la Sección 21 (Distrito de Usera) y Programa 33401 (Actividades Culturales).
 
-### Cursos impartidos
+Por tanto, las comparativas entre los dos Cursos las realizamos sobre el número de Talleres relacionados en los Pliegos de Prescripciones Técnicas.
+Los talleres programados en el conjunto de Centros han descendido:
 
-El objeto del Contrato 2015-2016 era la impartición de 192 cursos y talleres para las tres Áreas. Si todos los propuestos en el Anexo I del Pliego de Prescripciones Técnicas se hubieran impartido en los 6 Centros, tendríamos los 192. Sin embargo, los Centros programan solamente 69, un 36% de los propuestos.
+- 2014-2015: 68 cursos.
+- 2015-2016: 64 cursos[^10]
+
+[^10]: [Pliego de Prescripciones Técnicas del curso 2014-2015](http://www.madrid.es/UnidadesDescentralizadas/PerfilContratante/PC_Distritos/PC_Usera/A%C3%91O 2014/SERVICIOS/ficheros/PLIEGO DE PRESCRIPCIONES TECNICAS.pdf). Anexo II.
+
+Se ha producido un descenso del 5,88%.
+
+### Talleres impartidos
+
+El objeto del Contrato 2015-2016 era la impartición de 198 talleres para las tres Áreas. Si todos los propuestos en el Anexo I del Pliego de Prescripciones Técnicas se hubieran impartido en los 6 Centros, tendríamos los 198. Sin embargo, los Centros programan solamente 64, un 32,32% de los propuestos.
+
+Igualmente, para el Curso 2014-2015. Si todos los talleres propuestos en el Anexo I del Pliego de Prescripciones Técnicas se hubieran impartido para las tres Áreas en los 6 Centros, tendríamos 186. Sin embargo, los Centros programan solamente 68 un 36,56%.
 
 Los cursos y talleres impartidos por los Centros Culturales del distrito de Usera en el curso 2014-2015 se podrían agrupar en tres grandes bloques:
 
@@ -556,9 +589,9 @@ Los cursos y talleres impartidos por los Centros Culturales del distrito de User
 -   Adquisición de destrezas y
 -   Actividad corporal
 
-La figura 13 se puede ver la distribución del número de cursos y talleres entre los tres grandes grupos mencionados.
+La figura 15 se puede ver la distribución del número de cursos y talleres entre los tres grandes grupos mencionados.
 
-```{r distribucion-cursos, fig.width=8, fig.align="center", fig.cap="_Figura 13. Distribución de tipos de cursos impartidos en Usera en el curso 2014-2105.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
+```{r distribucion-cursos, fig.width=8, fig.align="center", fig.cap="_Figura 15. Distribución de tipos de cursos impartidos en Usera en el curso 2014-2105.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
 require(plotly)
 data = read.table("datos/distribucion_cursos_usera.csv", header = TRUE, sep=",")
 p <- plot_ly(data, labels=~Tipo.curso, values=~Cursos, type="pie", name="Presupuesto adjudicado", textinfo = 'label+percent', textposition = 'inside',
@@ -573,21 +606,21 @@ Pero aún es más grave que con los indicadores socioeconómicos comentados, el 
 
 Los distritos con mayor número de cursos y talleres impartidos por los Centros Culturales en 2015 fueron Latina, Villaverde y Chamartín, mientras que los de menor actividad fueron Vicálvaro, Villa de Vallecas y Chamberí.
 
-El la figura 14 se muestra la distribución del número de cursos y talleres impartidos en los Centros Culturales por Distrito.
+El la figura 16 se muestra la distribución del número de cursos y talleres impartidos en los Centros Culturales por Distrito.
 
-```{r distribucion-cursos-distritos, fig.width=6, fig.align="center", fig.cap="_Figura 14. Distribución del número de cursos impartidos en los centros culturales por distritos.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
+```{r distribucion-cursos-distritos, fig.width=6, fig.align="center", fig.cap="_Figura 16. Distribución del número de cursos por cada 10.000 habitantes impartidos en los centros culturales por distritos.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
 require(plotly)
-data = read.table("datos/distribucion_cursos_distritos.csv", header = TRUE, sep=",")
-p <- plot_ly(data, x=~Cursos, y=~reorder(Distrito, Cursos), type="bar", color=~Color, orientation="h", hoverinfo="text", text =~Cursos) %>%
-  layout(title = "Distribución del número de cursos impartidos en los centros culturales por distritos", xaxis = list(title="Número de cursos", gridcolor = "#bbb", tickformat="d"), yaxis = list(title=""), showlegend = FALSE, margin=list(l=130))
+data = read.table("datos/cursos_habitantes_distritos.csv", header = TRUE, sep=",")
+p <- plot_ly(data, x=~Cursos.habitantes, y=~reorder(Distrito, Cursos.habitantes), type="bar", color=~Color, orientation="h", hoverinfo="text", text =~Cursos.habitantes) %>%
+  layout(title = "Distribución del número de cursos por cada 10.000 habitantes<br> impartidos en los centros culturales por distritos", xaxis = list(title="Cursos/10.000 habitantes", gridcolor = "#bbb", tickformat="d"), yaxis = list(title=""), showlegend = FALSE, margin=list(l=130, t=60, b=80))
 p
 ```
 
 
 Es importante ver la distribución del número de cursos y talleres dentro del bloque de “Adquisición de conocimientos”.
-La figura 15 muestra el desglose según tipo de curso.
+La figura 17 muestra el desglose según tipo de curso.
 
-```{r distribucion-cursos-adquisicion-conocimientos, fig.width=8, fig.align="center", fig.cap="_Figura 15. Distribución de tipos de cursos de adquisición de conocimientos impartidos en Usera en el curso 2014-2105.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
+```{r distribucion-cursos-adquisicion-conocimientos, fig.width=8, fig.align="center", fig.cap="_Figura 17. Distribución de tipos de cursos de adquisición de conocimientos impartidos en Usera en el curso 2014-2105.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
 require(plotly)
 data = read.table("datos/distribucion_cursos_adquisicion_conocimientos.csv", header = TRUE, sep=",")
 p <- plot_ly(data, labels=~Tipo.curso, values=~Cursos, type="pie", name="Presupuesto adjudicado", textinfo = 'label+percent', textposition = 'inside',
@@ -604,24 +637,27 @@ Desde Audita Usera entendemos que es absolutamente insuficiente el número de cu
 
 - “Formación humanística” elemento fundamental para conformar ciudadanas con capacidad de pensar y de crítica.
 
-La figura 16 muestra la distribución del número de cursos y talleres impartidos en el área de “Informática” entre los diferentes Distritos de Madrid.
+La figura 18 muestra la distribución del número de cursos y talleres impartidos en el área de “Informática” entre los diferentes Distritos de Madrid.
 
-```{r distribucion-cursos-informática-distritos, fig.width=6, fig.align="center", fig.cap="_Figura 16. Distribución del número de cursos de informática impartidos en los centros culturales por distritos.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
+```{r distribucion-cursos-informática-distritos, fig.width=6, fig.align="center", fig.cap="_Figura 18. Distribución del número de cursos de informática por cada 10.000 habitantes impartidos en los centros culturales por distritos.<br>Fuente: Elaboración propia a partir de los datos del Área de Gobierno de Cultura y Deportes._"}
 require(plotly)
-data = read.table("datos/distribucion_cursos_distritos.csv", header = TRUE, sep=",")
-p <- plot_ly(data, x=~Cursos.Informática, y=~reorder(Distrito, Cursos.Informática), type="bar", color=~Color, orientation="h", hoverinfo="text", text =~Cursos.Informática) %>%
-  layout(title = "Distribución del número de cursos de informática impartidos en los centros culturales por distritos", xaxis = list(title="Número de cursos", gridcolor = "#bbb", tickformat="d"), yaxis = list(title=""), showlegend = FALSE, margin=list(l=130))
+data = read.table("datos/cursos_habitantes_distritos.csv", header = TRUE, sep=",")
+p <- plot_ly(data, x=~Cursos.informatica, y=~reorder(Distrito, Cursos.informatica), type="bar", color=~Color, orientation="h", hoverinfo="text", text =~Cursos.informatica) %>%
+  layout(title = "Distribución del número de cursos de informática pora cada 10.000 habitantes<br>impartidos en los centros culturales por distritos", xaxis = list(title="Cursos/10.000 habitantes", gridcolor = "#bbb", tickformat="d"), yaxis = list(title=""), showlegend = FALSE, margin=list(l=130, t=70))
 p
 ```
 
 
 ### Materias que se han programado en el curso 2015-16
 
-- Área “Adquisición de conocimientos-Formación humanística”: 11 cursos en los 6 Centros. Lo que supone el 17% del total de cursos programados (63). En el Centro de San Fermín solamente el 4% y en el de Orcasur el 0%.
+- Área “Adquisición de conocimientos-Formación humanística”: 11 talleres en los 6 centros lo que supone el 17% del total de cursos programados.
+En el Centro de San Fermín solamente el 4% y en el de Orcasur el 0%.
 
-- Área “Adquisición de destrezas”: 18 cursos en los 6 Centros. Lo que supone el 28% del total de cursos programados.
+- Área “Adquisición de destrezas”: 18 talleres en los 6 centros, lo que supone el 28% del total de talleres programados. 
+Atendiendo al número de horas programadas en esta área en el Centro de la Meseta de Orcasitas, solamente se ha impartido un taller de Pintura de 2 horas semanales lo que representa el 7% sobre el total de horas del centro. 
 
-- Actividad corporal: 34 en los 6 Centros. Lo que supone el 54% del total. En el Centro de Meseta de Orcasitas asciende al 85% y en el de San Fermín al 82%.[^11]
+- Actividad corporal: 35 talleres en los 6 centros, lo que supone el 54% del total. 
+En el Centro de Meseta de Orcasitas asciende al 85% y en el de San Fermín al 82%.[^11]
 
 [^11]: Ver [Pliego de Prescripciones Técnicas del Contrato](http://www.madrid.es/UnidadesDescentralizadas/PerfilContratante/PC_Distritos/PC_Usera/A%C3%91O%202014/SERVICIOS/ficheros/PLIEGO%20DE%20PRESCRIPCIONES%20TECNICAS.pdf), Anexo I, Documento 5.
 
@@ -634,21 +670,21 @@ En el Pliego de Prescripciones Técnicas se describe: _“La empresa adjudicatar
 
 Apenas se programan cursos donde es necesaria una mayor inversión en materiales, que serían de mayor utilidad para los alumnos, pero suponen una mayor inversión para la empresa adjudicataria, tales como:
 
-- Informática general y aplicaciones informáticas: Solamente se programan 4 horas semanales en el Centro Juvenil.  
+- Informática general y aplicaciones informáticas: Solamente se programa 1 taller de 5 horas semanales en el Centro Juvenil.
 Material: Ordenadores con microprocesadores Pentium pantalla plana. Dos impresoras por aula.
 
-- Cursos de artes aplicadas y manualidades: 32 horas semanales.
+- Cursos de artes aplicadas y manualidades: Se programan 14 talleres en los 6 centros de 33 horas semanales.
 
-- Audiovisuales: 2 horas programadas en el Centro Juvenil.  
+- Audiovisuales: Se programa 1 taller de fotografía digital de 2 horas semanales en el Centro Juvenil y otro de Teatro infantil de 2 horas en el Centro de Orcasur.  
 Material necesario: Escáner, PC, impresora, trípodes, focos para artes escénicas. Caballete por alumno para pintura, etc. Pirograbador para manualidades. Dos máquinas de coser.
 
 ### Actividades socioculturales y recreativas
 
-En el curso 2014-2015, se han previsto 25 Cursos de actividades socioculturales y recreativas por Centro y se ha realizado 20.[^12]
+En el curso 2014-2015, se han previsto 25 talleres de actividades socioculturales y recreativas por Centro y se ha realizado 20.[^12]
 
 [^12]: [Memoria de cumplimiento de objetivos 2014](http://www.madrid.es/UnidadesDescentralizadas/Presupuestos/EjecucionPresupuestaria/MemoriasCumplimientoObjetivos/Ficheros/Memoria_2014_vol_3.pdf).
 
-En el curso 2015-2016, se han previsto 18 Cursos de actividades socioculturales y recreativas por Centro y se han realizado 23.[^13]
+En el curso 2015-2016, se han previsto 18 talleres de actividades socioculturales y recreativas por Centro y se han realizado 23.[^13]
 
 [^13]: [Memoria de cumplimiento de objetivos 2015](http://transparencia.madrid.es/UnidadesDescentralizadas/Presupuestos/EjecucionPresupuestaria/MemoriasCumplimientoObjetivos/Ficheros/tomo3_2015.pdf).
 
@@ -656,10 +692,6 @@ En el curso 2015-2016, se han previsto 18 Cursos de actividades socioculturales 
 Teniendo en cuenta estos datos y comparándolos con los objetivos por los que se crearon los Centros Culturales y con el servicio que prestaban en la etapa anterior de gestión municipal, podemos concluir:
 
 1.  Cada vez interesan menos. Se contabilizan menos matriculaciones.
-
-2.  Mayor masificación de alumnos por aula. Lo que supone menor calidad.
-
-3.  Se ofrecen menos materias, pero aumentan las horas totales programadas. Lo que resulta más rentable para la empresa, ya que han de contratar a menos profesores y pueden matricular más alumnos en cada clase.
 
 4.  Se ofrecen los cursos que resultan más rentables para las empresas adjudicatarias. Aquellos que suponen menos gasto en material.
 
@@ -689,7 +721,13 @@ c.  ¿Material para los cursos?
 
 **Conclusiones**:
 
--   La/os trabajadora/es tienen carencia de recursos y materiales para poder impartir con calidad los cursos. De esta manera, la empresa se embolsa más beneficios, al quedarse con dinero, que en el pliego presupuestan y no gastan.
+-   La/os trabajadora/es tienen carencia de recursos y materiales para poder impartir con calidad los cursos. El material está viejo y no lo repone la empresa adjudicataria. En ocasiones, los profesores tienen que comprar material, o los mismos alumnos han de cubrir estos gastos para realizar los talleres. De esta manera, la empresa se reserva unos beneficios que en el pliego presupuestan y no gastan.
+
+- En cuanto a las relaciones laborales, no se cumplen las condiciones del Convenio Colectivo de marco estatal de Ocio Educativo y Animación Sociocultural que rige para los docentes de Centros Culturales en cuanto a períodos de prueba, jornada de trabajo, desplazamientos y formación.
+
+- Las retribuciones salariales son cada vez más precarias: reducción permanente del salario, retraso en el pago de nóminas, pagas extraordinarias, etc.
+
+-  	No se cumplen las condiciones firmadas en el contrato en relación con la provisión de coordinador y personal administrativo, lo que dificulta aún más la labor del profesorado.
 
 -   La calidad al usuario merma, pero la/os trabajadora/es, en su responsabilidad profesional, asumen realizar fotocopias o aportar materiales propios. Esto conlleva una tensión añadida a su trabajo.
 
@@ -698,6 +736,10 @@ c.  ¿Material para los cursos?
 -   También obligan al personal a que se calculen las horas trabajadas y el dinero que tienen que percibir. Además, calcular las horas complementarias que corresponden por horas trabajadas.
 
 -   En definitiva, tienen que hacer el trabajo de "Recursos Humanos" y entregarlo antes del 25 del mes trabajado. Si se demora, se retrasa el pago de nómina.
+
+Estas situaciones ante las que no parecen tomarse medidas efectivas han obligado a los profesores de estos Centros a presentar una petición promocionada por Change.org: _No a profesores "Low cost" de Centros Culturales_:
+
+> “Desde hace años los profesores de talleres en Centros culturales, licenciados y titulados, estamos cobrando un sueldo que no llega ni a 7€/hora a veces menos de 6€/hora. Lo que aumenta la desmotivación del profesorado y baje el nivel y la calidad de los centros públicos. Deberían ser los ayuntamientos los que se ocuparan de los centros culturales públicos de las ciudades y no empresas privadas subcontratadas." (Petición dirigida al Ayuntamiento de Madrid (noviembre de 2016).
 
 
 ## Empresas adjudicatarias: Aula Intercultural SL y Virensis SA
@@ -772,11 +814,11 @@ Llama la atención que en el Concurso de licitación se admita como acreditació
 
 Cuando menos, sorprende que el Ayuntamiento de Madrid admita el certificado expedido por una empresa que lleva desde el año 2005 sin presentar sus cuentas ante el Registro Mercantil y que, en el año 2011, por deudas, la Seguridad Social le requirió para embargo de bienes.
 
-En la figura 17 se puede ver la estructura de la red Aula Intercultural SL y las personas que forman parte de ella.
+En la figura 19 se puede ver la estructura de la red Aula Intercultural SL y las personas que forman parte de ella.
 
 <iframe src="http://onodo.org/visualizations/7726/embed/" width="100%" height="450px" scrolling="no" marginheight="0" frameborder="0" allowfullscreen></iframe>
 
-_Figura 17. Estructura de Aula Intercultural SL y las personas que forman parte de ella.<br>Fuente: Elaboración propia a partir de datos del Boletín Oficial del Registro Mercantil._
+_Figura 19. Estructura de Aula Intercultural SL y las personas que forman parte de ella.<br>Fuente: Elaboración propia a partir de datos del Boletín Oficial del Registro Mercantil._
 
 #### Ingresos de la empresa adjudicataria
 
@@ -786,9 +828,8 @@ El Pliego de Prescripciones Técnicas para el curso 2015-16, detalla que el “V
 
 Pero, según la Memoria de Contratos, el importe del contrato adjudicado a Aula Intercultural SL fue de 171.677 euros, con IVA.
 
-Esta empresa facturaba mensualmente al Ayuntamiento por el número de horas de clase impartidas y, por el momento, desconocemos la facturación total realizada[^20].
-
-[^20]: Se ha realizado una solicitud de información a través del “Portal de Transparencia” del Ayuntamiento de Madrid con fecha 29/11/2016. Con fecha 21/12/2016 hemos recibido notificación del Ayuntamiento de Madrid en la que se resuelve la _inadmisión de solicitud de acceso a la información pública_.
+Esta empresa facturaba mensualmente al Ayuntamiento por el número de horas de clase impartidas y, según datos suministrados por el Ayuntamiento de Madrid, la facturación ascendió a la cifra de 164.457,17 €. 
+Teniendo en cuenta que el número de horas impartidas fue de 6.970 horas, supone un coste/hora de **23,60 €** IVA incluido y de 19,50 € sin IVA.
 
 Otra posible fuente de ingresos para la empresa adjudicataria sería la cesión de espacios y medios, que son propiedad de la Junta, para realizar actividades externas a los servicios culturales de los cursos propios de los Centros.
 
@@ -837,9 +878,9 @@ En relación con la descripción de su actividad figura: _“Impartir por cuenta
 
 [^24]: Código CNAE 2009: Otra educación 8559 n.c.o.p.
 
-Los ingresos de explotación en el período 2009-2015 obtenidos por Virensis SA son los que se muestran en la figura 18.
+Los ingresos de explotación en el período 2009-2015 obtenidos por Virensis SA son los que se muestran en la figura 20.
 
-```{r ingresos-virensis, fig.width=8, fig.align="center", fig.cap="_Figura 18. Evolución de los ingresos de explotación de Virensis SA.<br>Fuente: Elaboración propia a partir de los datos del Registro Mercantil._"}
+```{r ingresos-virensis, fig.width=8, fig.align="center", fig.cap="_Figura 20. Evolución de los ingresos de explotación de Virensis SA.<br>Fuente: Elaboración propia a partir de los datos del Registro Mercantil._"}
 require(plotly)
 data = read.table("datos/ingresos_virensis.csv", header = TRUE, sep=",")
 p <- plot_ly(data, x=~Año, y=~Ingresos, type='bar', hoverinfo="text", text=~paste(format(Ingresos, decimal.mark=",", big.mark="."), " €")) %>%
@@ -847,14 +888,12 @@ p <- plot_ly(data, x=~Año, y=~Ingresos, type='bar', hoverinfo="text", text=~pas
 p
 ```
 
-
-Como Administradora Única figura Dña. María Luisa Sevilla Romero. Como accionista único consta D. Ángel García de Pedro. En la figura 19 se puede ver la estructura de la red Virensis SA y las personas que forman parte de ella.
-
+Como Administradora única figura Dña. María Luisa Sevilla Romero. Como accionista único consta D. Ángel García de Pedro. En la figura 21 se puede ver la estructura de la red Virensis SA y las personas que forman parte de ella.
 
 <iframe src="http://onodo.org/visualizations/8599/embed/" width="100%" height="450px" scrolling="no" marginheight="0" frameborder="0" allowfullscreen></iframe>
 
 <p class=caption>
-_Figura 19. Estructura de Virensis SA y las personas que forman parte de ella.  
+_Figura 21. Estructura de Virensis SA y las personas que forman parte de ella.  
 Fuente: Elaboración propia a partir de datos del Boletín Oficial del Registro Mercantil._
 </p>
 
@@ -902,13 +941,13 @@ En el concurso de licitación correspondiente a los “Talleres de Formación en
 
 En la tabla 3 se puede ver el desglose de las ofertas presentadas por cada una de las empresas.
 
-| Ofertas                          |    Importe | Horas extras talleres | Incremento de materiales | Coste/hora |
+| Ofertas                          |    Importe | Horas extras talleres | Incremento de materiales |
 |:---------------------------------|-----------:|----------------------:|-------------------------:|-----------:|
-| G.E. Escuelas Urbanas SL         | 176.079,20 |                     - |            5.512,76[^26] |            |
-| Tritoma SL                       | 192.454,57 |                 1.819 |           20.045,00[^27] |            |
-| Innovación y Desarrollo Local SL | 145.793,58 |                   372 |                        - |            |
-| Virensis SA                      | 175.991,16 |                   372 |                 9.060,33 |            |
-| Aula Intercultural SL            | 171.677,22 |                   909 |                10.658,00 |            |
+| G.E. Escuelas Urbanas SL         | 176.079,20 |                     - |            5.512,76[^26] |
+| Tritoma SL                       | 192.454,57 |                 1.819 |           20.045,00[^27] |
+| Innovación y Desarrollo Local SL | 145.793,58 |                   372 |                        - |
+| Virensis SA                      | 175.991,16 |                   372 |                 9.060,33 |
+| Aula Intercultural SL            | 171.677,22 |                   909 |                10.658,00 |
 
 _Tabla 3. Ofertas presentadas al concurso de licitación de los Talleres de Formación de los Centros Culturales de Usera en el curso 2015-2016.  
 Fuente: Elaboración propia a paritr de datos del Ayuntamiento de Madrid._
@@ -972,7 +1011,7 @@ Es evidente que la oferta más barata corresponde a Aula Intercultural SL, pero 
 
 ## Recomendaciones para evitar estas prácticas en el futuro
 
-“*Como ciudadanos, tenemos el derecho a exigir una mínima calidad en las actividades culturales de estos centros. Es necesario que los Centros Culturales vuelvan a ser un lugar de encuentro y convivencia, para que se abran a las necesidades de los barrios y puedan ser utilizados por colectivos, asociaciones, colegios, y por los vecinos en general. Ha costado mucho esfuerzo crear y consolidar los Centros Culturales y resulta indignante la política de dejarlos morir lentamente*.”[^28]
+“_Como ciudadanos, tenemos el derecho a exigir una mínima calidad en las actividades culturales de estos centros. Es necesario que los Centros Culturales vuelvan a ser un lugar de encuentro y convivencia, para que se abran a las necesidades de los barrios y puedan ser utilizados por colectivos, asociaciones, colegios, y por los vecinos en general. Ha costado mucho esfuerzo crear y consolidar los Centros Culturales y resulta indignante la política de dejarlos morir lentamente_.”[^28]
 
 [^28]: [Caminando por Madrid del 22/09/2012](http://caminandopormadrid.blogspot.com.es/2012/09/el-deterioro-de-los-centros-culturales.html).
 
@@ -1254,11 +1293,11 @@ Habría que resaltar un hecho que consideramos relevante. Para no incumplir el p
 
 <!-- Fuente: Memoria del Registro de Contratos del Ayuntamiento de Madrid. -->
 
-## Anexo 2: Testimonios de las condiciones laborales de los profesores de los Centros Culturales del distrito de Usera
+## Testimonios de las condiciones laborales de los profesores de los Centros Culturales del distrito de Usera
 
 ### Consulta que ha llegado a CC.OO. de Enseñanza, sobre una trabajadora de la empresa Aula Intercultural SL (diciembre de 2015)
 
-> “Mi nombre es ........, se me ha ocurrido plantearles a ustedes una consulta relacionada con la empresa de gestión cultural que me ha contratado este año como Experta en Talleres en Centros Culturales.
+> “Mi nombre es ..., se me ha ocurrido plantearles a ustedes una consulta relacionada con la empresa de gestión cultural que me ha contratado este año como Experta en Talleres en Centros Culturales.
 >
 >En el contrato, aparece la retribución de 9 euros la hora incluyendo todos los conceptos salariales y contractuales. Hasta ahí bien, pero hay una cláusula adicional en la que se dice y cito textualmente: "El empleado obtendrá como remuneración en especie formación equivalente a 2 euros por hora de trabajo conducente a la obtención de un certificado oficial TOEIC".
 >
