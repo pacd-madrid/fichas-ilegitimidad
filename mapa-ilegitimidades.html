@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -13,7 +13,7 @@
 
 <title>Mapa de indicios de ilegitimidad</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -26,12 +26,14 @@
 <link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-1.1/highlight.js"></script>
 <script src="site_libs/htmlwidgets-0.8/htmlwidgets.js"></script>
-<link href="site_libs/leaflet-0.7.3/leaflet.css" rel="stylesheet" />
-<script src="site_libs/leaflet-0.7.3/leaflet.js"></script>
+<link href="site_libs/leaflet-0.7.7/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-0.7.7/leaflet.js"></script>
 <link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <link href="site_libs/leaflet-label-0.2.2/leaflet.label.css" rel="stylesheet" />
 <script src="site_libs/leaflet-label-0.2.2/leaflet.label.js"></script>
-<script src="site_libs/leaflet-binding-1.0.1.9004/leaflet.js"></script>
+<script src="site_libs/Proj4Leaflet-0.7.2/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-0.7.2/proj4leaflet.js"></script>
+<script src="site_libs/leaflet-binding-1.1.0/leaflet.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -305,8 +307,8 @@ div.tocify {
 
 <div id="mapa" class="section level2">
 <h2>Mapa</h2>
-<div id="htmlwidget-61c599859ebf2cf7b9da" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-61c599859ebf2cf7b9da">{"x":{"setView":[[40.41358,-3.70453],12,[]],"calls":[{"method":"addTiles","args":["http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap\u003c/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA\u003c/a>"}]},{"method":"addMarkers","args":[40.41358,-3.70453,null,null,null,{"clickable":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Madrid",null,null,null,null]}],"limits":{"lat":[40.41358,40.41358],"lng":[-3.70453,-3.70453]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fafda9264f4672977d52" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fafda9264f4672977d52">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[40.41358,-3.70453],12,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[40.41358,-3.70453,null,null,null,{"clickable":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Madrid",null,null,null,null,null,null]}],"limits":{"lat":[40.41358,40.41358],"lng":[-3.70453,-3.70453]}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 

@@ -76,12 +76,17 @@ datos.fichas <- mutate(datos.fichas, Popup=crear.popup(Título, Título, Thumbna
 
 # Separar las coordenadas en longitud y latitud
 require(tidyr)
-datos.fichas <- separate(data = datos.fichas, col = Ubicación, into = c("lat", "lng"), sep = "\\,")
+options(digits=9)
+datos.fichas <- datos.fichas %>% 
+  filter(!is.na(Ubicación)) %>%
+  separate(col = Ubicación, into = c("lat", "lng"), sep = "\\,")
+datos.fichas$lat <- as.numeric(datos.fichas$lat)
+datos.fichas$lng <- as.numeric(datos.fichas$lng)
 
 require(leaflet)
 m <- leaflet(data = datos.fichas) %>%
   setView(lng=-3.70453, lat=40.41358, zoom = 12) %>%
-  addTiles() %>%
+  addTiles() %>% 
   addMarkers(popup=~Popup)
 m
 ```

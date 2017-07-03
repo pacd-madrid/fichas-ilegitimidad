@@ -19,7 +19,7 @@ menos de lo debido a los empleados, etc.)
 Años
 ----
 
-2010, 2011, 2012, 2013, 2014, 2015, 2016
+2014, 2015, 2016
 
 Distrito
 --------
@@ -49,6 +49,8 @@ Indicios de falta de transparencia y corrupción
 -   Existen vínculos entre el equipo de gobierno que aprobó el gasto y
     la empresa o empresas adjudicatarias.
 -   No se cumplió el contrato de adjudicación
+-   La información relativa al gasto no es fácilmente accesible
+    al público.
 
 Indicios sociales
 -----------------

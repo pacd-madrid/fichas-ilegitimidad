@@ -1,27 +1,27 @@
-Operación Mahou-Calderón
-========================
+Cambio de uso de suelo de varias parcelas del distrito de Moncloa
+=================================================================
 
 ------------------------------------------------------------------------
 
-![](https://dl.airtable.com/ZwGaOUGKRe2OEUTtN8YS_operacion-mahou-calderon.jpg)
+![]()
 
 <br/>
 
 Descripción
 -----------
 
-Convenio con Atlético de Madrid y Mahou para desarrollo del Proyecto
-Urbanístico
+Se ha observado que hay bastantes parcelas del distrito de Moncloa que
+cambiaron de uso de suelo en 2012 sin justificación aparente.
 
 Años
 ----
 
-2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014
+2012, 2013, 2014
 
 Distrito
 --------
 
-Arganzuela
+Moncloa-Aravaca
 
 Importe
 -------
@@ -41,15 +41,11 @@ No se conocen.
 Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
--   La información relativa al gasto no es fácilmente accesible
-    al público.
--   Hubo irregularidades en el proceso de contratación.
+-   La población no fue informada suficientemente del gasto.
 
 Indicios sociales
 -----------------
 
--   El gasto compromete la satisfación de algún derecho básico para
-    alguna parte de la población.
 -   El gasto sólo beneficia a una minoría privilegiada de la población.
 -   En el barrio o distrito había otras necesidades prioritarias que
     podrían haberse financiado con el dinero que supuso el gasto.
@@ -57,7 +53,8 @@ Indicios sociales
 Indicios ambientales
 --------------------
 
-No se conocen.
+-   El gasto ha provocado una agresión a la biodiversidad (especies
+    animales y vegetales).
 
 Indicios de género
 ------------------
@@ -77,16 +74,10 @@ No se conocen.
 Aspectos a investigar
 ---------------------
 
-Aplicación de convenio entre las partes y acuedo sobre el Plan Especial
-de Desarrollo Urbano del Proyecto
+Razones para el cambio de uso del suelo.
 
 Pruebas
 -------
-
-Existe información sobre el pago del convenio con entradas de fútbol por
-parte del Atlético de Madrid y acuerdo perjudicial para el Consistorio
-que debería abonar 40% de la operación para infraestructura y
-urbanización con dinero público.
 
 Peticiones de información
 -------------------------

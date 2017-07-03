@@ -41,7 +41,7 @@ Indicios de falta de transparencia y corrupción
 -----------------------------------------------
 
 -   La población no fue informada suficientemente del gasto.
--   La información relativa la gasto no es fácilmente accesible
+-   La información relativa al gasto no es fácilmente accesible
     al público.
 
 Indicios sociales
@@ -80,6 +80,9 @@ Pruebas
 Peticiones de información
 -------------------------
 
+-   [Segunda solicitud del contrato de alquiler del local de la Oficina
+    de Atención al Contribuyente de la calle Hierro,
+    27](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-994705.html)
 -   [Contrato de alquiler de local Oficina de Atencion al Contribuyente
     c/ Hierro,
     27](https://pacd-madrid.github.io/peticiones-informacion/peticion-2016-0728302.html)
